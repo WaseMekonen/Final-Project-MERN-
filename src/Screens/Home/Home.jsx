@@ -42,6 +42,7 @@ export default function Home({ airports }) {
         to: to,
         Defarture: defartureDate,
         return: returnDate,
+        passengers: passengers,
       });
     }
     setSearch(searchedArr);
