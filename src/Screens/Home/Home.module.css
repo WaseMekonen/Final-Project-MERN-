@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  height: 480px;
+  width: 100vw;
+  background-image: url(https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.slogen {
+  font-size: 29px;
+  text-align: left;
+  position: absolute;
+  top: 14%;
+  left: 11%;
+  height: 35%;
+  width: 48%;
+  color: #4c98e0;
+  background-color: #ffffff00;
+}
+
+.slogen h1 {
+  color: #2d6edf;
+}
+.slogen h2 {
+  color: #15233c;
+}
+
+.bookingContainer {
+  width: 78vw;
+  position: relative;
+  height: 219px;
+  top: 64%;
+  left: 11%;
+  border-radius: 12px;
+  background-color: rgb(255 255 255 / 90%);
+}
+.flightType {
+  margin-left: 5%;
+  width: 22%;
+  display: flex;
+  height: 20%;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.flightForm {
+  display: flex;
+  width: 100%;
+  height: 59%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.formInputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.formInputs input {
+  height: 23px;
+  width: 104%;
+}
+.formInputs input[type="number"] {
+  height: 23px;
+  width: 96%;
+}
+.formInputsSearch {
+  position: absolute;
+  width: 24%;
+  top: 78%;
+  left: 76%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.formInputsSearch input  {
+  width: 90%;
+  cursor: pointer;
+  background-color: #4c98e0;
+  height: 34px;
+  color: #15233c;
+  border-radius: 9px;
+  border-color: #dee2e9 #f9eded;
+  font-size: 142%;
+}
+.formContainer {
+  background-color: aliceblue;
+}
+.suggestionFrom,
+.suggestionTo {
+  background-color: #efefef;
+  width: 106%;
+  cursor: pointer;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  max-height: 30%;
+  overflow: auto;
+  border-bottom-left-radius: 12px;
+  border: antiquewhite;
+}
+
+.suggestionFrom,
+.suggestionTo:hover {
+  background-color: #ffffff;
+}
+
+.main {
+  height: 400px;
+  width: 100vw;
+  background-color: rgb(53, 152, 223);
+}
+.destinationImagesContainer {
+  position: absolute;
+  display: flex;
+  width: 78%;
+  height: 300px;
+  margin-left: 13%;
+  margin-top: 3%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.destanation {
+  width: 28%;
+  height: 59%;
+  margin-top: 8%;
+}
+.destanation img {
+  width: 100%;
+  height: 100%;
+}
+.footer {
+  height: 200px;
+  width: 100vw;
+  background-color: rgb(11, 53, 82);
+}
