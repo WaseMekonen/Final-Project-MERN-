@@ -8,3 +8,30 @@
   width: 100vw;
   background-color: rgb(11, 53, 82);
 }
+
+.userSearch {
+  display: flex;
+  background-color: #1b234a;
+  position: absolute;
+  width: 59rem;
+  height: 5rem;
+  margin: 5rem 8rem;
+}
+.userInputsTrom,
+.userInputsTo,
+.userInputsDate {
+  margin-left: 1%;
+  width: 16%;
+  height: 54%;
+  margin-top: 2%;
+  margin-right: 2%;
+  background-color: white;
+}
+.userChangeFlight {
+  margin-left: 3%;
+  width: 16%;
+  height: 54%;
+  margin-top: 2%;
+  margin-right: 2%;
+  background-color: white;
+}
