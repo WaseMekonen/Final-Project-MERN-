@@ -3,16 +3,17 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./Home.module.css";
 
-export default function Home({ airports }) {
+export default function Home({ airports, flightsSchedule }) {
   const [radio, setRadio] = useState("");
-  const [from, setFrom] = useState("");
-  const [to, setTo] = useState("");
+  const [origin, setOrigin] = useState("");
+  const [destination, setDestination] = useState("");
   const [defartureDate, setDefartureDate] = useState("");
   const [returnDate, setReturnDate] = useState(null);
   const [passengers, setPassengers] = useState("");
-  const [suggestionsFrom, setSuggestionsFrom] = useState([]);
-  const [suggestionsTo, setSuggestionsTo] = useState([]);
+  const [suggestionsOrigin, setSuggestionsOrigin] = useState([]);
+  const [suggestionsDestination, setSuggestionsDestination] = useState([]);
   const [search, setSearch] = useState([]);
+  const [result, setResult] = useState([]);
 
   const onChangHandler = (text, setValue, setSuggestions) => {
     let matches = [];
@@ -22,7 +23,6 @@ export default function Home({ airports }) {
         return airport.city.match(regex);
       });
     }
-    console.log("matches", matches);
     setSuggestions(matches);
     setValue(text);
   };
@@ -34,18 +34,24 @@ export default function Home({ airports }) {
 
   const searchedFlight = () => {
     let searchedArr = [];
-    if (from === to) {
+    if (origin === destination) {
       alert("You cant choose the same city");
+      setDestination(""), setOrigin("");
     } else {
       searchedArr.push({
-        from: from,
-        to: to,
-        Defarture: defartureDate,
+        origin: origin,
+        destination: destination,
+        defarture: defartureDate,
         return: returnDate,
         passengers: passengers,
       });
     }
     setSearch(searchedArr);
+
+    let foundTicket = flightsSchedule.filter((tickets) =>
+      tickets.origin.includes(origin && destination)
+    );
+    console.log(foundTicket);
   };
 
   return (
@@ -64,7 +70,7 @@ export default function Home({ airports }) {
               onChange={(e) => {
                 setRadio(e.target.value);
               }}
-            />{" "}
+            />
             Round Trip
             <input
               type="radio"
@@ -74,7 +80,7 @@ export default function Home({ airports }) {
               onChange={(e) => {
                 setRadio(e.target.value);
               }}
-            />{" "}
+            />
             One Way
           </div>
           <form
@@ -85,27 +91,31 @@ export default function Home({ airports }) {
             }}
           >
             <div className={styles.formInputs}>
-              <label>Flying from</label>
+              <label>Origin</label>
               <input
                 type="text"
                 placeholder="City "
                 onChange={(e) =>
-                  onChangHandler(e.target.value, setFrom, setSuggestionsFrom)
+                  onChangHandler(
+                    e.target.value,
+                    setOrigin,
+                    setSuggestionsOrigin
+                  )
                 }
-                value={from}
+                value={origin}
               />
-              {suggestionsFrom.length > 0 ? (
-                <div className={styles.suggestionFrom}>
-                  {suggestionsFrom &&
-                    suggestionsFrom.map((suggestion, i) => {
+              {suggestionsOrigin.length > 0 ? (
+                <div className={styles.suggestionorigin}>
+                  {suggestionsOrigin &&
+                    suggestionsOrigin.map((suggestion, i) => {
                       return (
                         <div
                           key={i}
                           onClick={() =>
                             onSuggestHandler(
                               suggestion.city,
-                              setFrom,
-                              setSuggestionsFrom
+                              setOrigin,
+                              setSuggestionsOrigin
                             )
                           }
                         >
@@ -119,27 +129,31 @@ export default function Home({ airports }) {
               )}
             </div>
             <div className={styles.formInputs}>
-              <label>To</label>
+              <label>Destination</label>
               <input
                 type="text"
                 placeholder="City "
                 onChange={(e) =>
-                  onChangHandler(e.target.value, setTo, setSuggestionsTo)
+                  onChangHandler(
+                    e.target.value,
+                    setDestination,
+                    setSuggestionsDestination
+                  )
                 }
-                value={to}
+                value={destination}
               />
-              {suggestionsTo.length > 0 ? (
-                <div className={styles.suggestionTo}>
-                  {suggestionsTo &&
-                    suggestionsTo.map((suggestion, i) => {
+              {suggestionsDestination.length > 0 ? (
+                <div className={styles.suggestiondestination}>
+                  {suggestionsDestination &&
+                    suggestionsDestination.map((suggestion, i) => {
                       return (
                         <div
                           key={i}
                           onClick={() =>
                             onSuggestHandler(
                               suggestion.city,
-                              setTo,
-                              setSuggestionsTo
+                              setDestination,
+                              setSuggestionsDestination
                             )
                           }
                         >
@@ -204,54 +218,23 @@ export default function Home({ airports }) {
 }
 
 {
-  /* <form/
-            className={styles.formContainer}
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}
-          >
-            <input
-              type="text"
-              placeholder="From"
-              onChange={(e) => onChangHandler(e.target.value)}
-              value={from}
-            />
-            <input
-              type="text"
-              placeholder="To"
-              onChange={(e) => {
-                setTo(e.target.value);
-              }}
-            />
-            <input
-              type="date"
-              onChange={(e) => {
-                setDate(e.target.value);
-              }}
-            />
-            <input
-              type="number"
-              placeholder="passengers"
-              min={0}
-              max={5}
-              onChange={(e) => {
-                setPassengers(e.target.value);
-              }}
-            />
-            <input type="submit" value="Search" />
-            <div className={styles.suggestions}>
-              {suggestions &&
-                suggestions.map((suggestion, i) => {
-                  return (
-                    <div
-                      className={styles.suggestion}
-                      key={i}
-                      onClick={() => onSuggestHandler(suggestion.city)}
-                    >
-                      {suggestion.city}
-                    </div>
-                  );
-                })}
-            </div>
-          </form> */
+  /* <SearchBar
+          radio={radio}
+          setRadio={setRadio}
+          searchedFlight={searchedFlight}
+          onChangHandler={onChangHandler}
+          onSuggestHandler={onSuggestHandler}
+          origin={origin}
+          setOrigin={setOrigin}
+          destination={destination}
+          setDestination={setDestination}
+          defartureDate={defartureDate}
+          setDefartureDate={setDefartureDate}
+          setReturnDate={setReturnDate}
+          setPassengers={setPassengers}
+          suggestionsOrigin={suggestionsOrigin}
+          setSuggestionsOrigin={setSuggestionsOrigin}
+          suggestionsDestination={suggestionsDestination}
+          setSuggestionsDestination={setSuggestionsDestination}
+        /> */
 }
