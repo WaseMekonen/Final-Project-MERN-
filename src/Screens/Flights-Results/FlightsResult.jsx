@@ -1,25 +1,12 @@
 import React from "react";
+import FlightDetails from "../../components/FlightDetails";
 import styles from "./FlightsResult.module.css";
 
-export default function FlightsResult() {
+export default function FlightsResult({ foundTickets, search }) {
   return (
     <div>
-      <div className={styles.FlightsResultContainer}>
-        <section className={styles.userSearch}>
-          <div className={styles.userInputsTrom}>
-            <h1>Tel aviv</h1>
-          </div>
-          <div className={styles.userInputsTo}>
-            <h1>Tel aviv</h1>
-          </div>
-          <div className={styles.userInputsDate}>
-            <h1>tel aviv</h1>
-          </div>
-          <div className={styles.userChangeFlight}>
-            <h1>tel aviv</h1>
-          </div>
-        </section>
-      </div>
+      <FlightDetails search={search} foundTickets={foundTickets} />
+
       <footer className={styles.footer}></footer>
     </div>
   );

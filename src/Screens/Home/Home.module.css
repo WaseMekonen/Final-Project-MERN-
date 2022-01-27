@@ -28,25 +28,28 @@
 .slogen h2 {
   color: #15233c;
 }
-
 .bookingContainer {
   width: 78vw;
   position: relative;
-  height: 215px;
-  top: 210px;
+  height: 171px;
+  top: 280px;
   left: 11%;
   border-radius: 12px;
-  background-color: rgb(255 255 255 / 90%);
+  background-color: rgb(255 255 255);
+  box-shadow: 5px 6px 12px #3c3a3a;
 }
+
 .flightType {
   margin-left: 5%;
   width: 22%;
   display: flex;
   height: 20%;
+  margin-bottom: 2%;
   align-items: center;
   flex-direction: row;
   justify-content: space-around;
 }
+
 .flightForm {
   display: flex;
   width: 100%;
@@ -59,20 +62,19 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: flex-start;
 }
-.formInputs input {
-  height: 23px;
-  width: 104%;
-}
+
+.formInputs input,
 .formInputs input[type="number"] {
-  height: 23px;
-  width: 96%;
+  height: 34px;
+  width: 104%;
 }
 .formInputsSearch {
   position: absolute;
-  width: 24%;
-  top: 78%;
-  left: 76%;
+  width: 18%;
+  top: 75%;
+  left: 82.5%;
   display: flex;
   justify-content: flex-end;
   flex-direction: column;

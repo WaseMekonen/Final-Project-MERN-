@@ -2,6 +2,7 @@ import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "../../src/Screens/Home/Home.module.css";
+import FlightType from "./FlightType";
 
 export default function SearchBar({
   radio,
@@ -26,27 +27,7 @@ export default function SearchBar({
   return (
     <div>
       <div className={styles.bookingContainer}>
-        <div className={styles.flightType}>
-          <input
-            value="roundTrip"
-            type="radio"
-            checked={radio == "roundTrip"}
-            onChange={(e) => {
-              setRadio(e.target.value);
-            }}
-          />
-          Round Trip
-          <input
-            type="radio"
-            value="oneWay"
-            type="radio"
-            checked={radio == "oneWay"}
-            onChange={(e) => {
-              setRadio(e.target.value);
-            }}
-          />
-          One Way
-        </div>
+        <FlightType setRadio={setRadio} radio={radio} />
         <form
           className={styles.flightForm}
           onSubmit={(e) => {
@@ -55,10 +36,9 @@ export default function SearchBar({
           }}
         >
           <div className={styles.formInputs}>
-            <label>Origin</label>
             <input
               type="text"
-              placeholder="City "
+              placeholder="Origin "
               onChange={(e) =>
                 onChangHandler(e.target.value, setOrigin, setSuggestionsOrigin)
               }
@@ -89,10 +69,9 @@ export default function SearchBar({
             )}
           </div>
           <div className={styles.formInputs}>
-            <label>Destination</label>
             <input
               type="text"
-              placeholder="City "
+              placeholder="Destination "
               onChange={(e) =>
                 onChangHandler(
                   e.target.value,
@@ -126,27 +105,43 @@ export default function SearchBar({
               ""
             )}
           </div>
+          {radio == "roundTrip" ? (
+            <>
+              <div className={styles.formInputs}>
+                <DatePicker
+                  placeholderText="Departure"
+                  selected={defartureDate}
+                  onChange={(Date) => setDefartureDate(Date)}
+                  dateFormat="dd/MM/yyyy"
+                  minDate={new Date()}
+                  maxDate={returnDate}
+                ></DatePicker>
+              </div>
+              <div className={styles.formInputs}>
+                <DatePicker
+                  placeholderText="Return"
+                  selected={returnDate}
+                  onChange={(Date) => setReturnDate(Date)}
+                  dateFormat="dd/MM/yyyy"
+                  minDate={defartureDate ? defartureDate : new Date()}
+                ></DatePicker>
+              </div>
+            </>
+          ) : (
+            <div className={styles.formInputs}>
+              <DatePicker
+                placeholderText="Departure"
+                selected={defartureDate}
+                onChange={(Date) => setDefartureDate(Date)}
+                dateFormat="dd/MM/yyyy"
+                minDate={new Date()}
+                maxDate={returnDate}
+              ></DatePicker>
+            </div>
+          )}
           <div className={styles.formInputs}>
-            <label>Defarture</label>
-            <DatePicker
-              selected={defartureDate}
-              onChange={(Date) => setDefartureDate(Date)}
-              dateFormat="dd/MM/yyyy"
-              minDate={new Date()}
-            ></DatePicker>
-          </div>
-          <div className={styles.formInputs}>
-            <label>Return</label>
-            <DatePicker
-              selected={returnDate}
-              onChange={(Date) => setReturnDate(Date)}
-              dateFormat="dd/MM/yyyy"
-              minDate={new Date()}
-            ></DatePicker>
-          </div>
-          <div className={styles.formInputs}>
-            <label>Passengers</label>
             <input
+              placeholder="Passengers"
               type="number"
               min={1}
               onChange={(e) => setPassengers(e.target.value)}

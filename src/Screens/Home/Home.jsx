@@ -1,10 +1,14 @@
 import { useState } from "react";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import SearchBar from "../../components/SearchBar";
 import styles from "./Home.module.css";
 
-export default function Home({ airports, flightsSchedule }) {
-  const [radio, setRadio] = useState("");
+export default function Home({
+  airports,
+  flightsSchedule,
+  setFoundTickets,
+  setSearch,
+}) {
+  const [radio, setRadio] = useState("roundTrip");
   const [origin, setOrigin] = useState("");
   const [destination, setDestination] = useState("");
   const [defartureDate, setDefartureDate] = useState("");
@@ -12,9 +16,7 @@ export default function Home({ airports, flightsSchedule }) {
   const [passengers, setPassengers] = useState("");
   const [suggestionsOrigin, setSuggestionsOrigin] = useState([]);
   const [suggestionsDestination, setSuggestionsDestination] = useState([]);
-  const [search, setSearch] = useState([]);
   const [result, setResult] = useState([]);
-  const [foundTickets, setFoundTickets] = useState([]);
 
   const onChangHandler = (text, setValue, setSuggestions) => {
     let matches = [];
@@ -49,11 +51,14 @@ export default function Home({ airports, flightsSchedule }) {
     }
     setSearch(searchedArr);
 
-    let foundTicket = flightsSchedule.filter((tickets) =>
-      tickets.origin.includes(origin)
+    const systemResult = flightsSchedule.filter(
+      (flight) =>
+        flight.origin.includes(origin) &&
+        flight.destination.includes(destination)
     );
-    setFoundTickets(foundTicket);
-    <Redirect to={() => FlightsResult}></Redirect>;
+
+    setFoundTickets(systemResult);
+    console.log(systemResult);
   };
 
   return (
@@ -75,6 +80,7 @@ export default function Home({ airports, flightsSchedule }) {
           setDestination={setDestination}
           defartureDate={defartureDate}
           setDefartureDate={setDefartureDate}
+          returnDate={returnDate}
           setReturnDate={setReturnDate}
           setPassengers={setPassengers}
           suggestionsOrigin={suggestionsOrigin}

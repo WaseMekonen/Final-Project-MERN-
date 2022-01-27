@@ -11,6 +11,8 @@ const airportUrl = "/data/elalRouts.json";
 function App() {
   const [airports, setAirports] = useState([]);
   const [flightsSchedule, setFlighSchedule] = useState([]);
+  const [foundTickets, setFoundTickets] = useState([]);
+  const [search, setSearch] = useState([]);
 
   useEffect(() => {
     getData(airportUrl, setAirports);
@@ -46,11 +48,19 @@ function App() {
                 airports={airports}
                 setFlighSchedule={setFlighSchedule}
                 flightsSchedule={flightsSchedule}
+                setFoundTickets={setFoundTickets}
+                search={search}
+                setSearch={setSearch}
               />
             )}
           />
           <Route exact path="/about" />
-          <Route path="/flightsResult" component={FlightsResult} />
+          <Route
+            path="/flightsResult"
+            component={() => (
+              <FlightsResult foundTickets={foundTickets} search={search} />
+            )}
+          />
           <Route exact path="/contact" />
           <Route exact path="/signIn" />
         </Switch>

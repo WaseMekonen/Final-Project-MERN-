@@ -1,7 +1,47 @@
 .FlightsResultContainer {
   height: 800px;
   width: 100vw;
-  background-color: beige;
+  background-color: #c8c8c8;
+}
+.results {
+  display: flex;
+  top: 41%;
+  left: 22.5%;
+  position: absolute;
+  width: 62%;
+  height: 99%;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
+.ticket {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 25%;
+  width: 91%;
+  padding: 1%;
+  background-color: #ffffff;
+  margin-top: 1%;
+  margin-left: 6.5%;
+  border-radius: 12px;
+}
+
+.flightDetails {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 71%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.flightPrice {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 21%;
+  justify-content: space-around;
+  align-items: center;
 }
 .footer {
   height: 200px;
@@ -21,17 +61,29 @@
 .userInputsTo,
 .userInputsDate {
   margin-left: 1%;
-  width: 16%;
-  height: 54%;
-  margin-top: 2%;
+  width: 18%;
+  height: 40%;
+  margin-top: 2.5%;
   margin-right: 2%;
   background-color: white;
+  border-radius: 12px;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 .userChangeFlight {
-  margin-left: 3%;
-  width: 16%;
-  height: 54%;
-  margin-top: 2%;
+  margin-left: 1%;
+  width: 18%;
+  height: 40%;
+  margin-top: 2.5%;
   margin-right: 2%;
   background-color: white;
+  border-radius: 12px;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
