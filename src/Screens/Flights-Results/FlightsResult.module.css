@@ -29,11 +29,19 @@
 
 .flightDetails {
   display: flex;
-  flex-direction: row;
-  height: auto;
+  flex-direction: column;
+  height: 100%;
   width: 71%;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-around;
+}
+
+.ticketOne,
+.ticketTwo {
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+  flex-wrap: wrap;
 }
 .flightPrice {
   display: flex;
