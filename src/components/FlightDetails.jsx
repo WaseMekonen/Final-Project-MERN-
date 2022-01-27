@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../Screens/Flights-Results/FlightsResult.module.css";
 import Tickets from "./Tickets";
 
-function FlightDetails({ search, foundTickets }) {
+function FlightDetails({ search, oneWayTickests, roundTripTickests }) {
   return (
     <div className={styles.FlightsResultContainer}>
       {search
@@ -29,7 +29,10 @@ function FlightDetails({ search, foundTickets }) {
           })
         : ""}
       <div className={styles.results}>
-        <Tickets foundTickets={foundTickets} />
+        <Tickets
+          oneWayTickests={oneWayTickests}
+          roundTripTickests={roundTripTickests}
+        />
       </div>
     </div>
   );

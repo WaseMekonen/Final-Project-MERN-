@@ -16,7 +16,6 @@ function FlightType({setRadio,radio}) {
         />
         Round Trip
         <input
-          type="radio"
           value="oneWay"
           type="radio"
           checked={radio == "oneWay"}

@@ -5,7 +5,8 @@ import styles from "./Home.module.css";
 export default function Home({
   airports,
   flightsSchedule,
-  setFoundTickets,
+  setOneWayTickests,
+  setRoundTripTickests,
   setSearch,
 }) {
   const [radio, setRadio] = useState("roundTrip");
@@ -51,14 +52,21 @@ export default function Home({
     }
     setSearch(searchedArr);
 
-    const systemResult = flightsSchedule.filter(
+    const systemOneWayTickets = flightsSchedule.filter(
       (flight) =>
         flight.origin.includes(origin) &&
         flight.destination.includes(destination)
     );
+    const systemRoundTripTickests = flightsSchedule.filter(
+      (flight) =>
+        flight.origin.includes(destination) &&
+        flight.destination.includes(origin)
+    );
 
-    setFoundTickets(systemResult);
-    console.log(systemResult);
+    setOneWayTickests(systemOneWayTickets);
+    setRoundTripTickests(systemRoundTripTickests)
+    console.log(systemOneWayTickets);
+    console.log(systemRoundTripTickests);
   };
 
   return (
