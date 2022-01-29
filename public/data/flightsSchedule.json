@@ -16,6 +16,22 @@
     "terminal": "Dep: 1 - Arr: 3"
   },
   {
+    "flightNumber": "LY111",
+    "departure": "19:15",
+    "arrival": "21:00",
+    "origin": "(DXB) Dubai, United Arab Emirates",
+    "destination": "(TLV) Tel Aviv-Yafo, Israel",
+    "terminal": "Dep: 1 - Arr: 3"
+  },
+  {
+    "flightNumber": "LY666",
+    "departure": "19:15",
+    "arrival": "21:00",
+    "origin": "(DXB) Dubai, United Arab Emirates",
+    "destination": "(TLV) Tel Aviv-Yafo, Israel",
+    "terminal": "Dep: 1 - Arr: 3"
+  },
+  {
     "flightNumber": "LY1",
     "departure": "22:45",
     "arrival": "04:20",
@@ -89,6 +105,22 @@
   },
   {
     "flightNumber": "LY382",
+    "departure": "12:20",
+    "arrival": "17:55",
+    "origin": "(TLV) Tel Aviv-Yafo, Israel",
+    "destination": "(DXB) Dubai, United Arab Emirates",
+    "terminal": "Dep: 3 - Arr: 1"
+  },
+  {
+    "flightNumber": "LY777",
+    "departure": "12:20",
+    "arrival": "17:55",
+    "origin": "(TLV) Tel Aviv-Yafo, Israel",
+    "destination": "(DXB) Dubai, United Arab Emirates",
+    "terminal": "Dep: 3 - Arr: 1"
+  },
+  {
+    "flightNumber": "LY555",
     "departure": "12:20",
     "arrival": "17:55",
     "origin": "(TLV) Tel Aviv-Yafo, Israel",

@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "../Screens/Flights-Results/FlightsResult.module.css";
+import OneWay from "./OneWay";
+import RoundTrip from "./RoundTrip";
 import Tickets from "./Tickets";
 
 function FlightDetails({ search, oneWayTickests, roundTripTickests }) {
@@ -29,10 +31,12 @@ function FlightDetails({ search, oneWayTickests, roundTripTickests }) {
           })
         : ""}
       <div className={styles.results}>
-        <Tickets
+        {/* <Tickets
           oneWayTickests={oneWayTickests}
           roundTripTickests={roundTripTickests}
-        />
+        /> */}
+        {/* <OneWay oneWayTickests={oneWayTickests} /> */}
+        <RoundTrip roundTripTickests={roundTripTickests} oneWayTickests={oneWayTickests} />
       </div>
     </div>
   );

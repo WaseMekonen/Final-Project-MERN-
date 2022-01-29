@@ -65,8 +65,8 @@ export default function Home({
 
     setOneWayTickests(systemOneWayTickets);
     setRoundTripTickests(systemRoundTripTickests)
-    console.log(systemOneWayTickets);
-    console.log(systemRoundTripTickests);
+    console.log({systemOneWayTickets});
+    console.log({systemRoundTripTickests});
   };
 
   return (
