@@ -14,8 +14,8 @@ export default function SearchBar({
   setOrigin,
   destination,
   setDestination,
-  defartureDate,
-  setDefartureDate,
+  departureDate,
+  setDepartureDate,
   returnDate,
   setReturnDate,
   setPassengers,
@@ -110,8 +110,8 @@ export default function SearchBar({
               <div className={styles.formInputs}>
                 <DatePicker
                   placeholderText="Departure"
-                  selected={defartureDate}
-                  onChange={(Date) => setDefartureDate(Date)}
+                  selected={departureDate}
+                  onChange={(Date) => setDepartureDate(Date)}
                   dateFormat="dd/MM/yyyy"
                   minDate={new Date()}
                   maxDate={returnDate}
@@ -123,7 +123,7 @@ export default function SearchBar({
                   selected={returnDate}
                   onChange={(Date) => setReturnDate(Date)}
                   dateFormat="dd/MM/yyyy"
-                  minDate={defartureDate ? defartureDate : new Date()}
+                  minDate={departureDate ? departureDate : new Date()}
                 ></DatePicker>
               </div>
             </>
@@ -131,8 +131,8 @@ export default function SearchBar({
             <div className={styles.formInputs}>
               <DatePicker
                 placeholderText="Departure"
-                selected={defartureDate}
-                onChange={(Date) => setDefartureDate(Date)}
+                selected={departureDate}
+                onChange={(Date) => setDepartureDate(Date)}
                 dateFormat="dd/MM/yyyy"
                 minDate={new Date()}
                 maxDate={returnDate}

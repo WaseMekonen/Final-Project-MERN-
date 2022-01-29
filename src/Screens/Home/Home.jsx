@@ -8,11 +8,12 @@ export default function Home({
   setOneWayTickests,
   setRoundTripTickests,
   setSearch,
+  radio,
+  setRadio,
 }) {
-  const [radio, setRadio] = useState("roundTrip");
   const [origin, setOrigin] = useState("");
   const [destination, setDestination] = useState("");
-  const [defartureDate, setDefartureDate] = useState("");
+  const [departureDate, setDepartureDate] = useState("");
   const [returnDate, setReturnDate] = useState(null);
   const [passengers, setPassengers] = useState("");
   const [suggestionsOrigin, setSuggestionsOrigin] = useState([]);
@@ -38,14 +39,17 @@ export default function Home({
 
   const searchedFlight = () => {
     let searchedArr = [];
+    if(origin || destination || departureDate || returnDate || passengers == ""){
+      return
+    }
     if (origin === destination) {
       alert("You cant choose the same city");
-      setDestination(""), setOrigin("");
+      return;
     } else {
       searchedArr.push({
         origin: origin,
         destination: destination,
-        defarture: defartureDate,
+        departure: departureDate,
         return: returnDate,
         passengers: passengers,
       });
@@ -64,9 +68,9 @@ export default function Home({
     );
 
     setOneWayTickests(systemOneWayTickets);
-    setRoundTripTickests(systemRoundTripTickests)
-    console.log({systemOneWayTickets});
-    console.log({systemRoundTripTickests});
+    setRoundTripTickests(systemRoundTripTickests);
+    console.log({ systemOneWayTickets });
+    console.log({ systemRoundTripTickests });
   };
 
   return (
@@ -86,8 +90,8 @@ export default function Home({
           setOrigin={setOrigin}
           destination={destination}
           setDestination={setDestination}
-          defartureDate={defartureDate}
-          setDefartureDate={setDefartureDate}
+          departureDate={departureDate}
+          setDepartureDate={setDepartureDate}
           returnDate={returnDate}
           setReturnDate={setReturnDate}
           setPassengers={setPassengers}

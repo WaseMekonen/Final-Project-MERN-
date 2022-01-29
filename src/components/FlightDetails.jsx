@@ -2,9 +2,8 @@ import React from "react";
 import styles from "../Screens/Flights-Results/FlightsResult.module.css";
 import OneWay from "./OneWay";
 import RoundTrip from "./RoundTrip";
-import Tickets from "./Tickets";
 
-function FlightDetails({ search, oneWayTickests, roundTripTickests }) {
+function FlightDetails({ search, oneWayTickests, roundTripTickests, radio }) {
   return (
     <div className={styles.FlightsResultContainer}>
       {search
@@ -19,7 +18,7 @@ function FlightDetails({ search, oneWayTickests, roundTripTickests }) {
                 </div>
                 <div className={styles.userInputsDate}>
                   <h5>
-                    {ticket.defartureDate}
+                    {ticket.departureDate}
                     {ticket.returnDate}
                   </h5>
                 </div>
@@ -31,12 +30,14 @@ function FlightDetails({ search, oneWayTickests, roundTripTickests }) {
           })
         : ""}
       <div className={styles.results}>
-        {/* <Tickets
-          oneWayTickests={oneWayTickests}
-          roundTripTickests={roundTripTickests}
-        /> */}
-        {/* <OneWay oneWayTickests={oneWayTickests} /> */}
-        <RoundTrip roundTripTickests={roundTripTickests} oneWayTickests={oneWayTickests} />
+        {radio == "roundTrip" ? (
+          <RoundTrip
+            roundTripTickests={roundTripTickests}
+            oneWayTickests={oneWayTickests}
+          />
+        ) : (
+          <OneWay oneWayTickests={oneWayTickests} />
+        )}
       </div>
     </div>
   );

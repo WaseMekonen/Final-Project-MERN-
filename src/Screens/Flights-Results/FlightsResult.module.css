@@ -1,17 +1,16 @@
 .FlightsResultContainer {
   height: 800px;
   width: 100vw;
-  background-color: #c8c8c8;
+  background-color: #dadada;
 }
 .results {
   display: flex;
   top: 41%;
-  left: 22.5%;
+  left: 23.2%;
   position: absolute;
   width: 62%;
-  height: 99%;
+  height: auto;
   flex-direction: column;
-  border: 1px solid black;
 }
 
 .ticket {

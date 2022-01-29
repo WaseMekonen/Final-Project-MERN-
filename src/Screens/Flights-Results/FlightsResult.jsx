@@ -6,6 +6,7 @@ export default function FlightsResult({
   oneWayTickests,
   search,
   roundTripTickests,
+  radio,
 }) {
   return (
     <div>
@@ -13,8 +14,8 @@ export default function FlightsResult({
         search={search}
         oneWayTickests={oneWayTickests}
         roundTripTickests={roundTripTickests}
+        radio={radio}
       />
-
       <footer className={styles.footer}></footer>
     </div>
   );

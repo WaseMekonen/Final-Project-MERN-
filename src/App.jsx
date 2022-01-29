@@ -14,6 +14,7 @@ function App() {
   const [oneWayTickests, setOneWayTickests] = useState([]);
   const [roundTripTickests, setRoundTripTickests] = useState([]);
   const [search, setSearch] = useState([]);
+  const [radio, setRadio] = useState("roundTrip");
 
   useEffect(() => {
     getData(airportUrl, setAirports);
@@ -53,6 +54,8 @@ function App() {
                 setRoundTripTickests={setRoundTripTickests}
                 search={search}
                 setSearch={setSearch}
+                radio={radio}
+                setRadio={setRadio}
               />
             )}
           />
@@ -64,6 +67,7 @@ function App() {
                 oneWayTickests={oneWayTickests}
                 search={search}
                 roundTripTickests={roundTripTickests}
+                radio={radio}
               />
             )}
           />
