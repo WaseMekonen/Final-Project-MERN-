@@ -1,6 +1,7 @@
 import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useEffect } from "react/cjs/react.development";
 import styles from "../../src/Screens/Home/Home.module.css";
 import FlightType from "./FlightType";
 
@@ -19,11 +20,27 @@ export default function SearchBar({
   returnDate,
   setReturnDate,
   setPassengers,
+  passengers,
   suggestionsOrigin,
   setSuggestionsOrigin,
   suggestionsDestination,
   setSuggestionsDestination,
+  disable,
+  setDisable,
 }) {
+  const isValid = () => {
+    if ((origin && destination && departureDate && returnDate) !== "") {
+      setDisable(false);
+    } else {
+      console.log(origin, destination, departureDate, returnDate);
+      return;
+    }
+  };
+
+  useEffect(() => {
+    isValid();
+  }, [origin, destination, departureDate, returnDate]);
+
   return (
     <div>
       <div className={styles.bookingContainer}>
@@ -32,7 +49,9 @@ export default function SearchBar({
           className={styles.flightForm}
           onSubmit={(e) => {
             e.preventDefault();
-            searchedFlight();
+            if (isValid) {
+              searchedFlight();
+            }
           }}
         >
           <div className={styles.formInputs}>
@@ -143,12 +162,17 @@ export default function SearchBar({
             <input
               placeholder="Passengers"
               type="number"
+              value={passengers ? passengers : 1}
               min={1}
               onChange={(e) => setPassengers(e.target.value)}
             />
           </div>
-          <div className={styles.formInputsSearch}>
-            <input type="submit" value="Search Flight" />
+          <div
+            className={
+              disable ? styles.formInputsSearchDisable : styles.formInputsSearch
+            }
+          >
+            <input type="submit" value="Search Flight" disabled={disable} />
           </div>
         </form>
         <div className={styles.searchflight}></div>

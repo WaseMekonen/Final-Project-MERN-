@@ -18,7 +18,8 @@ export default function Home({
   const [passengers, setPassengers] = useState("");
   const [suggestionsOrigin, setSuggestionsOrigin] = useState([]);
   const [suggestionsDestination, setSuggestionsDestination] = useState([]);
-  const [result, setResult] = useState([]);
+  const [disable, setDisable] = useState(true);
+  // const [result, setResult] = useState([]);
 
   const onChangHandler = (text, setValue, setSuggestions) => {
     let matches = [];
@@ -39,9 +40,6 @@ export default function Home({
 
   const searchedFlight = () => {
     let searchedArr = [];
-    if(origin || destination || departureDate || returnDate || passengers == ""){
-      return
-    }
     if (origin === destination) {
       alert("You cant choose the same city");
       return;
@@ -55,7 +53,6 @@ export default function Home({
       });
     }
     setSearch(searchedArr);
-
     const systemOneWayTickets = flightsSchedule.filter(
       (flight) =>
         flight.origin.includes(origin) &&
@@ -66,7 +63,6 @@ export default function Home({
         flight.origin.includes(destination) &&
         flight.destination.includes(origin)
     );
-
     setOneWayTickests(systemOneWayTickets);
     setRoundTripTickests(systemRoundTripTickests);
     console.log({ systemOneWayTickets });
@@ -95,10 +91,13 @@ export default function Home({
           returnDate={returnDate}
           setReturnDate={setReturnDate}
           setPassengers={setPassengers}
+          passengers={passengers}
           suggestionsOrigin={suggestionsOrigin}
           setSuggestionsOrigin={setSuggestionsOrigin}
           suggestionsDestination={suggestionsDestination}
           setSuggestionsDestination={setSuggestionsDestination}
+          disable={disable}
+          setDisable={setDisable}
         />
       </header>
       <main className={styles.main}>
