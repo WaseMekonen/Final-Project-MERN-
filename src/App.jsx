@@ -7,6 +7,7 @@ import styles from "./App.module.css";
 import FlightsResult from "./Screens/Flights-Results/FlightsResult";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import Booking from "./Screens/Booking/Booking";
 
 const flightUrl = "/data/flightsSchedule.json";
 const airportUrl = "/data/elalRouts.json";
@@ -83,6 +84,11 @@ function App() {
             exact
             path="/Login"
             component={() => <Login setAuth={setAuth} />}
+          />
+          <Route
+            exact
+            path="/Booking"
+            component={() => <Booking setAuth={setAuth} />}
           />
           <Route
             exact

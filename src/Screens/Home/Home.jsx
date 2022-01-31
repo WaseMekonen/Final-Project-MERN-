@@ -102,6 +102,10 @@ export default function Home({
         />
       </header>
       <main className={styles.main}>
+        <div className={styles.cheapFlights}>
+          <h2>Cheap tickets to popular cities</h2>
+          <hr></hr>
+        </div>
         <div className={styles.destinationImagesContainer}>
           <div className={styles.destanation}>
             <img src="images/paris.jpg" alt="paris" />

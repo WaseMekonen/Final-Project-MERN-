@@ -1,7 +1,15 @@
 import React from "react";
 import styles from "../Screens/Flights-Results/FlightsResult.module.css";
+import { Redirect } from "react-router-dom";
+import { useState } from "react/cjs/react.development";
 
 export default function RoundTrip({ roundTripTickests, oneWayTickests }) {
+  const [redirect, setRedirect] = useState(false);
+
+  const passTicketToBooking = (ticketId)=>{
+      
+  }
+
   const roundTripElements = roundTripTickests
     ? roundTripTickests.map((ticket, i) => {
         const secondTicket = Object.values(oneWayTickests);
@@ -58,7 +66,13 @@ export default function RoundTrip({ roundTripTickests, oneWayTickests }) {
                   <span>400$</span>
                 </div>
                 <div className="button">
-                  <button>Book</button>
+                  <button
+                    onClick={() => {
+                      setRedirect(true);
+                    }}
+                  >
+                    Book
+                  </button>
                 </div>
               </section>
             </div>
@@ -67,5 +81,10 @@ export default function RoundTrip({ roundTripTickests, oneWayTickests }) {
       })
     : null;
 
-  return <>{roundTripElements}</>;
+  return (
+    <>
+      {redirect ? <Redirect to="/Booking" /> : null}
+      {roundTripElements}
+    </>
+  );
 }

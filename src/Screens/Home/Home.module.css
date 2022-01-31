@@ -128,10 +128,28 @@
 }
 
 .main {
+  display: flex;
   height: 400px;
   width: 100vw;
   background-color: rgb(169, 174, 179);
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
+.cheapFlights h2 {
+  margin-top: -7rem;
+  font-size: xx-large;
+}
+.cheapFlights hr {
+  width: 42%;
+  margin-left: 35%;
+  height: 6px;
+  background-color: #03a9f4;
+  border: none;
+}
+
 .destinationImagesContainer {
   position: absolute;
   display: flex;

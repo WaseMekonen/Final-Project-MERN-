@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "flightNumber": "LY397",
     "departure": "14:20",
     "arrival": "21:05",
@@ -8,6 +9,7 @@
     "terminal": "Dep: 2 - Arr: 3"
   },
   {
+    "id": "2",
     "flightNumber": "LY8",
     "departure": "19:15",
     "arrival": "21:00",
@@ -16,6 +18,7 @@
     "terminal": "Dep: 1 - Arr: 3"
   },
   {
+    "id": "3",
     "flightNumber": "LY111",
     "departure": "19:15",
     "arrival": "21:00",
@@ -24,6 +27,7 @@
     "terminal": "Dep: 1 - Arr: 3"
   },
   {
+    "id": "4",
     "flightNumber": "LY666",
     "departure": "19:15",
     "arrival": "21:00",
@@ -32,6 +36,7 @@
     "terminal": "Dep: 1 - Arr: 3"
   },
   {
+    "id": "5",
     "flightNumber": "LY1",
     "departure": "22:45",
     "arrival": "04:20",
@@ -40,6 +45,7 @@
     "terminal": "Dep: 4S - Arr: 3"
   },
   {
+    "id": "6",
     "flightNumber": "LY26",
     "departure": "20:50",
     "arrival": "14:10",
@@ -48,6 +54,7 @@
     "terminal": "Dep: B - Arr: 3"
   },
   {
+    "id": "7",
     "flightNumber": "LY316",
     "departure": "23:50",
     "arrival": "17:10",
@@ -56,6 +63,7 @@
     "terminal": "Dep: 4 - Arr: 3"
   },
   {
+    "id": "8",
     "flightNumber": "LY27",
     "departure": "09:05",
     "arrival": "12:35",
@@ -64,6 +72,7 @@
     "terminal": "Dep: 3 - Arr: 2"
   },
   {
+    "id": "9",
     "flightNumber": "LY974",
     "departure": "11:00",
     "arrival": "14:15",
@@ -72,6 +81,7 @@
     "terminal": "Dep: D - Arr: 3"
   },
   {
+    "id": "10",
     "flightNumber": "LY398",
     "departure": "14:45",
     "arrival": "20:00",
@@ -80,6 +90,7 @@
     "terminal": "Dep: 2A - Arr: 3"
   },
   {
+    "id": "11",
     "flightNumber": "LY315",
     "departure": "11:15",
     "arrival": "16:00",
@@ -88,6 +99,7 @@
     "terminal": "Dep: 1 - Arr: 3"
   },
   {
+    "id": "12",
     "flightNumber": "LY2652",
     "departure": "01:00",
     "arrival": "06:00",
@@ -96,6 +108,7 @@
     "terminal": "Dep: 3 - Arr: B"
   },
   {
+    "id": "13",
     "flightNumber": "LY324",
     "departure": "00:45",
     "arrival": "05:45",
@@ -104,6 +117,7 @@
     "terminal": "Dep: 3 - Arr: 4"
   },
   {
+    "id": "14",
     "flightNumber": "LY382",
     "departure": "12:20",
     "arrival": "17:55",
@@ -112,6 +126,7 @@
     "terminal": "Dep: 3 - Arr: 1"
   },
   {
+    "id": "15",
     "flightNumber": "LY777",
     "departure": "12:20",
     "arrival": "17:55",
@@ -120,6 +135,7 @@
     "terminal": "Dep: 3 - Arr: 1"
   },
   {
+    "id": "16",
     "flightNumber": "LY555",
     "departure": "12:20",
     "arrival": "17:55",
@@ -128,6 +144,7 @@
     "terminal": "Dep: 3 - Arr: 1"
   },
   {
+    "id": "17",
     "flightNumber": "LY973",
     "departure": "06:30",
     "arrival": "09:55",
@@ -136,6 +153,7 @@
     "terminal": "Dep: 3 - Arr: D"
   },
   {
+    "id": "18",
     "flightNumber": "LY2651",
     "departure": "17:05",
     "arrival": "21:35",
@@ -144,6 +162,7 @@
     "terminal": "Dep: 3 - Arr: 4S"
   },
   {
+    "id": "19",
     "flightNumber": "LY323",
     "departure": "09:00",
     "arrival": "13:00",
@@ -152,6 +171,7 @@
     "terminal": "Dep: 3 - Arr: 2A"
   },
   {
+    "id": "20",
     "flightNumber": "LY81",
     "departure": "15:05",
     "arrival": "16:40",
@@ -159,7 +179,8 @@
     "destination": "(BKK) Bangkok, Thailand"
   },
   {
-    "flightNumber": "LY381",
+    "id": "21",
+    "fligh3Number": "LY381",
     "departure": "06:00",
     "arrival": "09:15",
     "origin": "(TLV) Tel Aviv-Yafo, Israel",
@@ -167,7 +188,8 @@
     "terminal": "Dep: 3 - Arr: 1"
   },
   {
-    "flightNumber": "LY18",
+    "id": "22",
+    "fligh3Number": "LY18",
     "departure": "12:00",
     "arrival": "06:45",
     "origin": "(MIA) Miami, United States",
@@ -175,6 +197,7 @@
     "terminal": "Dep: S - Arr: 3"
   },
   {
+    "id": "23",
     "flightNumber": "LY2",
     "departure": "18:00",
     "arrival": "11:20",
@@ -183,6 +206,7 @@
     "terminal": "Dep: 4 - Arr: 3"
   },
   {
+    "id": "24",
     "flightNumber": "LY6",
     "departure": "14:00",
     "arrival": "14:00",
@@ -191,6 +215,7 @@
     "terminal": "Dep: TBIT - Arr: 3"
   },
   {
+    "id": "25",
     "flightNumber": "LY30",
     "departure": "19:15",
     "arrival": "12:50",
@@ -199,6 +224,7 @@
     "terminal": "Dep: 3 - Arr: 3"
   },
   {
+    "id": "26",
     "flightNumber": "LY318",
     "departure": "20:20",
     "arrival": "03:05",
@@ -207,6 +233,7 @@
     "terminal": "Dep: 2 - Arr: 3"
   },
   {
+    "id": "27",
     "flightNumber": "LY572",
     "departure": "20:50",
     "arrival": "23:25",
@@ -215,6 +242,7 @@
     "terminal": "- Arr: 3"
   },
   {
+    "id": "28",
     "flightNumber": "LY333",
     "departure": "15:30",
     "arrival": "19:30",
@@ -223,6 +251,7 @@
     "terminal": "Dep: 3"
   },
   {
+    "id": "29",
     "flightNumber": "LY317",
     "departure": "15:15",
     "arrival": "18:45",
@@ -231,6 +260,7 @@
     "terminal": "Dep: 3 - Arr: 2"
   },
   {
+    "id": "30",
     "flightNumber": "LY8068",
     "departure": "10:50",
     "arrival": "15:00",
@@ -239,22 +269,25 @@
     "terminal": "Dep: 2 - Arr: D"
   },
   {
+    "id": "31",
     "flightNumber": "LY2432",
     "departure": "20:45",
     "arrival": "21:45",
     "origin": "(LCA) Larnaca, Cyprus",
     "destination": "(TLV) Tel Aviv-Yafo, Israel",
-    "terminal": "- Arr: 3"
+    "terminal": "Dep: 3 - Arr: 2"
   },
   {
+    "id": "32",
     "flightNumber": "LY544",
     "departure": "23:05",
     "arrival": "00:55",
     "origin": "(ATH) Athens, Greece",
     "destination": "(TLV) Tel Aviv-Yafo, Israel",
-    "terminal": "- Arr: 3"
+    "terminal": "Dep: 3 - Arr: 2"
   },
   {
+    "id": "33",
     "flightNumber": "LY376",
     "departure": "19:15",
     "arrival": "02:45",
@@ -263,27 +296,30 @@
     "terminal": "Dep: 1 - Arr: 3"
   },
   {
+    "id": "34",
     "flightNumber": "LY692",
     "departure": "22:40",
     "arrival": "23:15",
     "origin": "(TBS) Tbilisi, Georgia",
     "destination": "(TLV) Tel Aviv-Yafo, Israel",
-    "terminal": "- Arr: 3"
+    "terminal": "Dep: 3 - Arr: 2"
   },
   {
+    "id": "35",
     "flightNumber": "LY332",
     "departure": "20:45",
     "arrival": "02:05",
     "origin": "(BRU) Brussels, Belgium",
     "destination": "(TLV) Tel Aviv-Yafo, Israel",
-    "terminal": "- Arr: 3"
+    "terminal": "Dep: 3 - Arr: 2"
   },
   {
+    "id": "36",
     "flightNumber": "LY342",
     "departure": "13:30",
     "arrival": "18:30",
     "origin": "(GVA) Geneva, Switzerland",
     "destination": "(TLV) Tel Aviv-Yafo, Israel",
-    "terminal": "- Arr: 3"
+    "terminal": "Dep: 3 - Arr: 2"
   }
 ]
