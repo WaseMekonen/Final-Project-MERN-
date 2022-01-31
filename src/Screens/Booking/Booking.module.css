@@ -15,18 +15,32 @@
   background-color: cadetblue;
 }
 .totalDetails {
+  display: flex;
   height: 1000px;
   width: 100vw;
   background-color: rgb(18, 9, 70);
 }
 .flightDetails {
-  height: 400px;
-  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  height: 1000px;
+  width: 170vw;
   background-color: darkgoldenrod;
+  justify-content: space-around;
+}
+.currentFlight {
+  height: 45%;
+  width: 90%;
+  background-color: rgb(89, 184, 11);
+}
+.travelerDetails {
+  height: 45%;
+  width: 90%;
+  background-color: rgb(11, 184, 155);
 }
 .pricing {
-  height: 600px;
-  width: 80vw;
+  height: 1000px;
+  width: 20%;
   background-color: rgb(124, 42, 255);
 }
 

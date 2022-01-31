@@ -9,11 +9,14 @@ function Booking({ bookingResult }) {
   return (
     <>
       <div className={styles.bookingContainer}>
-        <section className={styles.ticketingProcess}></section>
+        <section className={styles.ticketingProcess}>
+          <h2>hello</h2>
+        </section>
         <section className={styles.totalDetails}>
           <article className={styles.flightDetails}>
-            <div></div>
-            <div></div>
+            <div className={styles.currentFlight}></div>
+            <div className={styles.travelerDetails}></div>
+            <button>continue</button>
           </article>
           <article className={styles.pricing}></article>
         </section>
