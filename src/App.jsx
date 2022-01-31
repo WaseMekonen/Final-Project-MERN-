@@ -11,6 +11,7 @@ import Register from "./components/Register/Register";
 const flightUrl = "/data/flightsSchedule.json";
 const airportUrl = "/data/elalRouts.json";
 function App() {
+  const [auth, setAuth] = useState(null);
   const [airports, setAirports] = useState([]);
   const [flightsSchedule, setFlighSchedule] = useState([]);
   const [oneWayTickests, setOneWayTickests] = useState([]);
@@ -78,8 +79,16 @@ function App() {
             )}
           />
           <Route exact path="/contact" />
-          <Route exact path="/Login" component={() => <Login />} />
-          <Route exact path="/Register" component={() => <Register />} />
+          <Route
+            exact
+            path="/Login"
+            component={() => <Login setAuth={setAuth} />}
+          />
+          <Route
+            exact
+            path="/Register"
+            component={() => <Register setAuth={setAuth} />}
+          />
         </Switch>
       </div>
     </BrowserRouter>

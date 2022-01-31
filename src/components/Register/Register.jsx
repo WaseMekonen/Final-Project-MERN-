@@ -1,12 +1,36 @@
 import React from "react";
 import styles from "./Register.module.css";
 import { useState } from "react";
+import { FIREBASE_KEY } from "../../../logic/key";
+import axios from "axios";
+import { useEffect } from "react/cjs/react.development";
 
-function Register() {
+const URL = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${FIREBASE_KEY}`;
+
+function Register({ setAuth }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassWord, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+
+  const signUp = () => {
+    axios
+      .post(URL, {
+        email,
+        password,
+      })
+      .then((response) => {
+        console.log(response.data);
+        setAuth(response.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
+  // useEffect(() => {
+  //   signUp();
+  // }, []);
 
   return (
     <div>
@@ -14,7 +38,11 @@ function Register() {
         className={styles.register}
         onSubmit={(e) => {
           e.preventDefault();
-          signIn();
+          if (password == confirmPassWord) {
+            signUp();
+          } else {
+            alert("password doesn't match");
+          }
           e.target[0].value = "";
           e.target[1].value = "";
         }}

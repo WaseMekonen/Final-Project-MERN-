@@ -1,11 +1,37 @@
-import React from "react";
+import { React, useEffect } from "react";
 import styles from "./Login.module.css";
 import { useState } from "react";
+import { FIREBASE_KEY } from "../../../logic/key";
+import axios from "axios";
 
-function Login() {
+const URL = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${FIREBASE_KEY}`;
+
+function Login({ setAuth }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  const signIn = () => {
+    axios
+      .post(URL, {
+        email,
+        password,
+      })
+      .then((response) => {
+        () => {
+          setAuth(response.data);
+          console.log(response.data);
+        };
+      })
+      .catch((err) => {
+        console.error(err);
+        setError(error);
+      });
+  };
+
+  // useEffect(() => {
+  //   signIn();
+  // }, []);
 
   return (
     <div>
