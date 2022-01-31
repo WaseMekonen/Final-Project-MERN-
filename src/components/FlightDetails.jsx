@@ -3,7 +3,13 @@ import styles from "../Screens/Flights-Results/FlightsResult.module.css";
 import OneWay from "./OneWay";
 import RoundTrip from "./RoundTrip";
 
-function FlightDetails({ search, oneWayTickests, roundTripTickests, radio }) {
+function FlightDetails({
+  search,
+  oneWayTickests,
+  roundTripTickests,
+  radio,
+  setBookingResult,
+}) {
   return (
     <div className={styles.FlightsResultContainer}>
       {search
@@ -34,6 +40,7 @@ function FlightDetails({ search, oneWayTickests, roundTripTickests, radio }) {
           <RoundTrip
             roundTripTickests={roundTripTickests}
             oneWayTickests={oneWayTickests}
+            setBookingResult={setBookingResult}
           />
         ) : (
           <OneWay oneWayTickests={oneWayTickests} />

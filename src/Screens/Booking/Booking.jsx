@@ -1,9 +1,15 @@
 import React from "react";
 
-function Booking() {
+function Booking({ bookingResult }) {
+  const bookingElemments = bookingResult.map((ticket) => {
+    return <h1>{ticket.flightNumber}</h1>;
+  });
+
   return (
     <div>
-      <h2>booking page</h2>
+      <header></header>
+      <main></main>
+      <footer></footer>
     </div>
   );
 }

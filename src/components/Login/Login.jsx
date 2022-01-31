@@ -1,5 +1,5 @@
 import { React, useEffect } from "react";
-import styles from "./Login.module.css";
+import styles from "./login.module.css";
 import { useState } from "react";
 import { FIREBASE_KEY } from "../../../logic/key";
 import axios from "axios";

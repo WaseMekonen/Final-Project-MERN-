@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useEffect } from "react/cjs/react.development";
 import styles from "../../src/Screens/Home/Home.module.css";
 import FlightType from "./FlightType";
+import { Redirect } from "react-router-dom";
 
 export default function SearchBar({
   radio,
@@ -28,11 +28,12 @@ export default function SearchBar({
   disable,
   setDisable,
 }) {
+  const [redirectToSearchResult, setRedirectToSearchResult] = useState(false);
+
   const isValid = () => {
     if ((origin && destination && departureDate && returnDate) !== "") {
       setDisable(false);
     } else {
-      console.log(origin, destination, departureDate, returnDate);
       return;
     }
   };
@@ -51,6 +52,7 @@ export default function SearchBar({
             e.preventDefault();
             if (isValid) {
               searchedFlight();
+              setRedirectToSearchResult(true);
             }
           }}
         >
@@ -173,6 +175,7 @@ export default function SearchBar({
             }
           >
             <input type="submit" value="Search Flight" disabled={disable} />
+            {redirectToSearchResult ? <Redirect to="/flightsResult" /> : null}
           </div>
         </form>
         <div className={styles.searchflight}></div>

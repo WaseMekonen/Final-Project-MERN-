@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Register.module.css";
+import styles from "./register.module.css";
 import { useState } from "react";
 import { FIREBASE_KEY } from "../../../logic/key";
 import axios from "axios";

@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link, Route, Switch } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
+import { Link, Route, BrowserRouter, Switch } from "react-router-dom";
 import Home from "./Screens/Home/Home";
+import FlightsResult from "./Screens/Flights-Results/FlightsResult";
+import Login from "./components/login/login";
+import Register from "./components/register/register";
+import Booking from "./Screens/booking/booking";
 import { getData } from "./Utils/clientFunctions";
 import styles from "./App.module.css";
-import FlightsResult from "./Screens/Flights-Results/FlightsResult";
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
-import Booking from "./Screens/Booking/Booking";
 
 const flightUrl = "/data/flightsSchedule.json";
 const airportUrl = "/data/elalRouts.json";
@@ -19,6 +18,7 @@ function App() {
   const [roundTripTickests, setRoundTripTickests] = useState([]);
   const [search, setSearch] = useState([]);
   const [radio, setRadio] = useState("roundTrip");
+  const [bookingResult, setBookingResult] = useState([]);
 
   useEffect(() => {
     getData(airportUrl, setAirports);
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className={styles.app}>
         <div className={styles.routing}>
           <div className={styles.logo}>
             <Link to="/">
@@ -41,10 +41,11 @@ function App() {
             <Link to="/about">About</Link>
             <Link to="/contact">Contact</Link>
             <Link to="/flightsResult">FlightResult</Link>
+            <Link to="/booking">Booking</Link>
           </div>
           <div className={styles.login}>
-            <Link to="/Login">Login</Link>
-            <Link to="/Register">Register</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
           </div>
         </div>
         <Switch>
@@ -59,7 +60,6 @@ function App() {
                 flightsSchedule={flightsSchedule}
                 setOneWayTickests={setOneWayTickests}
                 setRoundTripTickests={setRoundTripTickests}
-                search={search}
                 setSearch={setSearch}
                 radio={radio}
                 setRadio={setRadio}
@@ -69,6 +69,13 @@ function App() {
           <Route exact path="/about" />
           <Route
             exact
+            path="/booking"
+            component={() => (
+              <Booking setAuth={setAuth} bookingResult={bookingResult} />
+            )}
+          />
+          <Route
+            exact
             path="/flightsResult"
             component={() => (
               <FlightsResult
@@ -76,23 +83,19 @@ function App() {
                 search={search}
                 roundTripTickests={roundTripTickests}
                 radio={radio}
+                setBookingResult={setBookingResult}
               />
             )}
           />
           <Route exact path="/contact" />
           <Route
             exact
-            path="/Login"
+            path="/login"
             component={() => <Login setAuth={setAuth} />}
           />
           <Route
             exact
-            path="/Booking"
-            component={() => <Booking setAuth={setAuth} />}
-          />
-          <Route
-            exact
-            path="/Register"
+            path="/register"
             component={() => <Register setAuth={setAuth} />}
           />
         </Switch>

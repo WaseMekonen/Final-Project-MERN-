@@ -1,23 +1,35 @@
 import React from "react";
 import styles from "../Screens/Flights-Results/FlightsResult.module.css";
 import { Redirect } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
-export default function RoundTrip({ roundTripTickests, oneWayTickests }) {
-  const [redirect, setRedirect] = useState(false);
+export default function RoundTrip({
+  roundTripTickests,
+  oneWayTickests,
+  setBookingResult,
+}) {
+  
+  const passTicketToBooking = (oneWayTicketId, roundTripTicketId) => {
+    const roundTripTicketForBooking = [];
+    const foundOneWayTicket = oneWayTickests.find((ticket) => {
+      return oneWayTicketId === ticket.id;
+    });
+    const foundRoundTripTicket = roundTripTickests.find((ticket) => {
+      return roundTripTicketId === ticket.id;
+    });
+    roundTripTicketForBooking.push(foundOneWayTicket);
+    roundTripTicketForBooking.push(foundRoundTripTicket);
+    setBookingResult(roundTripTicketForBooking);
+  };
 
-  const passTicketToBooking = (ticketId)=>{
-      
-  }
-
-  const roundTripElements = roundTripTickests
-    ? roundTripTickests.map((ticket, i) => {
-        const secondTicket = Object.values(oneWayTickests);
+  const roundTripElements = oneWayTickests
+    ? oneWayTickests.map((ticket, i) => {
+        const secondTicket = Object.values(roundTripTickests);
         return (
           <>
-            <div className={styles.roudTripticket}>
+            <div className={styles.roudTripticket} key={i}>
               <div className={styles.roundTicketDataContainer}>
-                <section className={styles.flightDetails} key={i}>
+                <section className={styles.flightDetails}>
                   <div className={styles.roundTicketInnerContainer}>
                     <div className="flight num">
                       <h4>{ticket.flightNumber}</h4>
@@ -68,7 +80,7 @@ export default function RoundTrip({ roundTripTickests, oneWayTickests }) {
                 <div className="button">
                   <button
                     onClick={() => {
-                      setRedirect(true);
+                      passTicketToBooking(ticket.id, secondTicket[i].id);
                     }}
                   >
                     Book
@@ -81,10 +93,5 @@ export default function RoundTrip({ roundTripTickests, oneWayTickests }) {
       })
     : null;
 
-  return (
-    <>
-      {redirect ? <Redirect to="/Booking" /> : null}
-      {roundTripElements}
-    </>
-  );
+  return <>{roundTripElements}</>;
 }

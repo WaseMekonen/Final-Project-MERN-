@@ -7,6 +7,7 @@ export default function FlightsResult({
   search,
   roundTripTickests,
   radio,
+  setBookingResult,
 }) {
   return (
     <div>
@@ -15,6 +16,7 @@ export default function FlightsResult({
         oneWayTickests={oneWayTickests}
         roundTripTickests={roundTripTickests}
         radio={radio}
+        setBookingResult={setBookingResult}
       />
       <footer className={styles.footer}></footer>
     </div>
