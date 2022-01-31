@@ -5,7 +5,8 @@
 .header {
   height: 400px;
   width: 100vw;
-  background-image: url(https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80);
+  background-image: url(https://media-exp1.licdn.com/dms/image/C561BAQFOGM8S6gp06w/company-background_10000/0/1638096506282?e=2159024400&v=beta&t=IAyIF6emIIJ1CzM85Gi_RWwyYubPKYQ27NoaQNcHg3g);
+  /* background-image: url(https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -35,7 +36,7 @@
   top: 280px;
   left: 11%;
   border-radius: 12px;
-  background-color: rgb(255 255 255);
+  background-color: #00203c;
   box-shadow: 5px 6px 12px #3c3a3a;
 }
 
@@ -69,8 +70,12 @@
 .formInputs input[type="number"] {
   height: 34px;
   width: 104%;
+  color: #055af5;
+  font-size: 13px;
+  border: 3px solid #838383;
 }
-.formInputsSearch,.formInputsSearchDisable {
+.formInputsSearch,
+.formInputsSearchDisable {
   position: absolute;
   width: 18%;
   top: 75%;
@@ -79,7 +84,6 @@
   justify-content: flex-end;
   flex-direction: column;
 }
-
 
 .formInputsSearch input {
   width: 90%;

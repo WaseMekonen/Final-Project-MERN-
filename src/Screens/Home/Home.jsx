@@ -19,6 +19,7 @@ export default function Home({
   const [suggestionsOrigin, setSuggestionsOrigin] = useState([]);
   const [suggestionsDestination, setSuggestionsDestination] = useState([]);
   const [disable, setDisable] = useState(true);
+ 
   // const [result, setResult] = useState([]);
 
   const onChangHandler = (text, setValue, setSuggestions) => {

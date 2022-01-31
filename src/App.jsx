@@ -5,6 +5,8 @@ import Home from "./Screens/Home/Home";
 import { getData } from "./Utils/clientFunctions";
 import styles from "./App.module.css";
 import FlightsResult from "./Screens/Flights-Results/FlightsResult";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
 
 const flightUrl = "/data/flightsSchedule.json";
 const airportUrl = "/data/elalRouts.json";
@@ -36,8 +38,11 @@ function App() {
           <div className={styles.links}>
             <Link to="/about">About</Link>
             <Link to="/contact">Contact</Link>
-            <Link to="/signIn">Login</Link>
             <Link to="/flightsResult">FlightResult</Link>
+          </div>
+          <div className={styles.login}>
+            <Link to="/Login">Login</Link>
+            <Link to="/Register">Register</Link>
           </div>
         </div>
         <Switch>
@@ -61,6 +66,7 @@ function App() {
           />
           <Route exact path="/about" />
           <Route
+            exact
             path="/flightsResult"
             component={() => (
               <FlightsResult
@@ -72,7 +78,8 @@ function App() {
             )}
           />
           <Route exact path="/contact" />
-          <Route exact path="/signIn" />
+          <Route exact path="/Login" component={() => <Login />} />
+          <Route exact path="/Register" component={() => <Register />} />
         </Switch>
       </div>
     </BrowserRouter>
