@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Booking.module.css";
 
 function Booking({ bookingResult }) {
   const bookingElemments = bookingResult.map((ticket) => {
@@ -6,11 +7,19 @@ function Booking({ bookingResult }) {
   });
 
   return (
-    <div>
-      <header></header>
-      <main></main>
-      <footer></footer>
-    </div>
+    <>
+      <div className={styles.bookingContainer}>
+        <section className={styles.ticketingProcess}></section>
+        <section className={styles.totalDetails}>
+          <article className={styles.flightDetails}>
+            <div></div>
+            <div></div>
+          </article>
+          <article className={styles.pricing}></article>
+        </section>
+        <footer className={styles.footer}></footer>
+      </div>
+    </>
   );
 }
 

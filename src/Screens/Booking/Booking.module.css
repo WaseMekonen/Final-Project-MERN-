@@ -1,3 +1,35 @@
+.bookingContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 1200px;
+  width: 100vw;
+  background-color: burlywood;
+}
+.ticketingProcess {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 150px;
+  width: 100%;
+  background-color: cadetblue;
+}
+.totalDetails {
+  height: 1000px;
+  width: 100vw;
+  background-color: rgb(18, 9, 70);
+}
+.flightDetails {
+  height: 400px;
+  width: 80vw;
+  background-color: darkgoldenrod;
+}
+.pricing {
+  height: 600px;
+  width: 80vw;
+  background-color: rgb(124, 42, 255);
+}
+
 .footer {
   height: 200px;
   width: 100vw;
