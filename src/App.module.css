@@ -1,21 +1,21 @@
 .App {
   text-align: center;
-  background-color:#dadada;
+  background-color: #dadada;
 }
 
 .routing {
   display: flex;
-  height: 30px;
+  height: 55px;
   background-color: rgb(255, 255, 255);
-  justify-content: space-between;
   flex-direction: row;
   align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid darkgrey;
 }
 .logo img {
-  margin-top: 4px;
-  margin-left: 2px;
-  width: 97%;
-  height: 61%;
+  width: 37%;
+  margin-left: 2rem;
 }
 .links a {
   color: #15233c;

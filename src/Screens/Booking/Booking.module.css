@@ -4,7 +4,6 @@
   flex-wrap: wrap;
   height: 1200px;
   width: 100vw;
-  background-color: burlywood;
 }
 .ticketingProcess {
   display: flex;
@@ -12,7 +11,6 @@
   flex-wrap: wrap;
   height: 150px;
   width: 100%;
-  background-color: cadetblue;
   align-items: center;
   align-content: space-around;
 }
@@ -21,14 +19,12 @@
   display: flex;
   height: 1000px;
   width: 100vw;
-  background-color: rgb(18, 9, 70);
 }
 .flightDetails {
   display: flex;
   flex-direction: column;
   height: 1000px;
   width: 170vw;
-  background-color: darkgoldenrod;
   align-items: center;
   justify-content: space-around;
 }
@@ -43,6 +39,7 @@
   border-radius: 9px;
   align-items: center;
   justify-content: space-between;
+  border: 1px solid darkgrey;
 }
 .bookingFlightDetails {
   display: flex;
@@ -55,22 +52,34 @@
 }
 
 .travelerDetails {
-  background-color: rgb(239 239 239);
   display: flex;
   margin-left: 2rem;
   height: 45%;
   width: 90%;
   border-radius: 9px;
   flex-direction: column;
-  justify-content: space-around;
   flex-wrap: wrap;
   border-radius: 9px;
   align-items: center;
+  border: 1px solid darkgrey;
 }
-.pricing {
+.travelerDetailsHeading {
+  display: flex;
+  height: 17%;
+  background-color: #948671;
+  width: 100%;
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
+  align-items: center;
+}
+
+.pricingContainer {
+  display: flex;
   height: 1000px;
   width: 77%;
-  background-color: rgb(124, 42, 255);
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .footer {

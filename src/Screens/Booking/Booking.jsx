@@ -1,4 +1,5 @@
 import React from "react";
+import BookingPricing from "../../components/BookingDetails/BookingPricing/BookingPricing";
 import BookingProcess from "../../components/BookingDetails/BookingProcess/BookingProcess";
 import BookingTicket from "../../components/BookingDetails/BookingTicket/BookingTicket";
 import BookingTravelDetails from "../../components/BookingDetails/BookingTravelDetails/BookingTravelDetails";
@@ -10,7 +11,7 @@ function Booking({ bookingResult }) {
     <>
       <div className={styles.bookingContainer}>
         <section className={styles.ticketingProcess}>
-          <BookingProcess/>
+          <BookingProcess />
         </section>
         <section className={styles.totalDetails}>
           <article className={styles.flightDetails}>
@@ -22,11 +23,15 @@ function Booking({ bookingResult }) {
             </div>
 
             <div className={styles.travelerDetails}>
-              <h3>Traveler Details</h3>
+              <div className={styles.travelerDetailsHeading}>
+                <h3>Traveler Details</h3>
+              </div>
               <BookingTravelDetails />
             </div>
           </article>
-          <article className={styles.pricing}></article>
+          <article className={styles.pricingContainer}>
+            <BookingPricing />
+          </article>
         </section>
         <footer className={styles.footer}></footer>
       </div>

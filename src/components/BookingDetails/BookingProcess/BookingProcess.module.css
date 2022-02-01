@@ -1,22 +1,22 @@
-.ProcessList {
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    height: 50%;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-  }
+.processList {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid darkgray;
+}
   
-  .ProcessList li {
+  .processList li {
     display: flex;
     width: 13%;
-    margin-left: 14rem;
     flex-direction: column;
     align-items: center;
   }
   
-  .ProcessList li a {
+  .processList li a {
     text-decoration: none;
     margin-bottom: 1rem;
     font-size: 18px;
@@ -25,3 +25,9 @@
     background-color: gray;
     text-align: center;
   }
+  .line{
+    width: 12%;
+    border-radius: 13%;
+    height: 3%;
+    background-color: #cecece;
+}

@@ -48,7 +48,7 @@ export default function RoundTrip({
                     </div>
                   </div>
                 </section>
-                <section className={styles.flightDetails}>
+                <section className={styles.flightDetails} key={secondTicket[i].id}>
                   <div className={styles.roundTicketInnerContainer}>
                     <div className="flight num">
                       <h4>{secondTicket[i].flightNumber}</h4>

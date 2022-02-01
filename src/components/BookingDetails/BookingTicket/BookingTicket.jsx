@@ -5,7 +5,7 @@ function BookingTicket({ bookingResult }) {
   const bookingFlightDetails = bookingResult.map((ticket, i) => {
     return (
       <>
-        <section className={styles.ticket} key={i}>
+        <section className={styles.ticket} key={ticket.id}>
           <div className={styles.flightBrand}>
             <h3>{ticket.flightNumber}</h3>
           </div>
