@@ -8,7 +8,6 @@ export default function RoundTrip({
   oneWayTickests,
   setBookingResult,
 }) {
-  
   const passTicketToBooking = (oneWayTicketId, roundTripTicketId) => {
     const roundTripTicketForBooking = [];
     const foundOneWayTicket = oneWayTickests.find((ticket) => {
@@ -27,7 +26,7 @@ export default function RoundTrip({
         const secondTicket = Object.values(roundTripTickests);
         return (
           <>
-            <div className={styles.roudTripticket} key={i}>
+            <div className={styles.roudTripticket} key={ticket.id}>
               <div className={styles.roundTicketDataContainer}>
                 <section className={styles.flightDetails}>
                   <div className={styles.roundTicketInnerContainer}>
@@ -75,7 +74,7 @@ export default function RoundTrip({
                   <span>icon</span>
                 </div>
                 <div className="price">
-                  <span>400$</span>
+                  <span>200$</span>
                 </div>
                 <div className="button">
                   <button

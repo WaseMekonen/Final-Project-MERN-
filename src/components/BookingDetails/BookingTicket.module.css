@@ -1,0 +1,45 @@
+.ticket {
+    display: flex;
+    width: 100%;
+    height: 170px;
+    flex-direction: row;
+    margin-bottom: 2rem;
+    border-bottom: 1px gray dotted;
+    background-color: white;
+  }
+  
+  .flightBrand {
+    display: flex;
+    width: 20%;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .flightTime {
+    list-style-type: none;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+  }
+  
+  .flightTime ul {
+    list-style-type: none;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+  }
+  
+  .cabin {
+    height: 100%;
+    width: 20%;
+  }

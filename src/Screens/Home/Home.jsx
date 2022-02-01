@@ -119,7 +119,9 @@ export default function Home({
           </div>
         </div>
       </main>
-      <footer className={styles.footer}></footer>
+      <footer className={styles.footer}>
+        <h1>hello</h1>
+      </footer>
     </div>
   );
 }

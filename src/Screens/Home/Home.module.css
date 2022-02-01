@@ -133,11 +133,15 @@
   width: 100vw;
   background-color: rgb(169, 174, 179);
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  align-content: space-around;
 }
-
+.cheapFlights {
+  margin-left: 25rem;
+  margin-bottom: 3rem;
+}
 .cheapFlights h2 {
   margin-top: -7rem;
   font-size: xx-large;
