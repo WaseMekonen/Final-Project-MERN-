@@ -1,5 +1,6 @@
 import React from "react";
 import BookingTicket from "../../components/BookingDetails/BookingTicket";
+import BookingTravelDetails from "../../components/BookingDetails/BookingTravelDetails";
 import styles from "./Booking.module.css";
 
 function Booking({ bookingResult }) {
@@ -13,15 +14,20 @@ function Booking({ bookingResult }) {
         <section className={styles.totalDetails}>
           <article className={styles.flightDetails}>
             <div className={styles.currentFlight}>
+              <h3>Flight Details</h3>
               <article className={styles.bookingFlightDetails}>
                 <BookingTicket bookingResult={bookingResult} />
               </article>
             </div>
-            <div className={styles.travelerDetails}></div>
+
+            <div className={styles.travelerDetails}>
+              <h3>Traveler Details</h3>
+              <BookingTravelDetails />
+            </div>
           </article>
           <article className={styles.pricing}></article>
         </section>
-        <button>continue</button>
+
         <footer className={styles.footer}></footer>
       </div>
     </>
