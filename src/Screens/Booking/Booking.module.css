@@ -13,7 +13,10 @@
   height: 150px;
   width: 100%;
   background-color: cadetblue;
+  align-items: center;
+  align-content: space-around;
 }
+
 .totalDetails {
   display: flex;
   height: 1000px;
@@ -29,11 +32,7 @@
   align-items: center;
   justify-content: space-around;
 }
-.flightDetails button {
-  width: 23%;
-  height: 2rem;
-  margin-left: 29rem;
-}
+
 .currentFlight {
   display: flex;
   margin-left: 2rem;
@@ -56,15 +55,17 @@
 }
 
 .travelerDetails {
-  background-color: white;
+  background-color: rgb(239 239 239);
   display: flex;
   margin-left: 2rem;
   height: 45%;
   width: 90%;
+  border-radius: 9px;
   flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
   border-radius: 9px;
+  align-items: center;
 }
 .pricing {
   height: 1000px;

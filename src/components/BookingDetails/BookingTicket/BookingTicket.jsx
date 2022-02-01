@@ -12,11 +12,13 @@ function BookingTicket({ bookingResult }) {
           <div className={styles.flightTime}>
             <ul>
               <li>
-                <h5>{ticket.departure}</h5>
+                <h4>{ticket.departure}</h4>
+                <h5>{ticket.originCode}</h5>
                 <span>{ticket.origin}</span>
               </li>
               <li>
-                <h5>{ticket.arrival}</h5>
+                <h4>{ticket.arrival}</h4>
+                <h5>{ticket.destinationCode}</h5>
                 <span>{ticket.destination}</span>
               </li>
             </ul>

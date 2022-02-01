@@ -1,6 +1,7 @@
 import React from "react";
-import BookingTicket from "../../components/BookingDetails/BookingTicket";
-import BookingTravelDetails from "../../components/BookingDetails/BookingTravelDetails";
+import BookingProcess from "../../components/BookingDetails/BookingProcess/BookingProcess";
+import BookingTicket from "../../components/BookingDetails/BookingTicket/BookingTicket";
+import BookingTravelDetails from "../../components/BookingDetails/BookingTravelDetails/BookingTravelDetails";
 import styles from "./Booking.module.css";
 
 function Booking({ bookingResult }) {
@@ -9,7 +10,7 @@ function Booking({ bookingResult }) {
     <>
       <div className={styles.bookingContainer}>
         <section className={styles.ticketingProcess}>
-          <h2>hello</h2>
+          <BookingProcess/>
         </section>
         <section className={styles.totalDetails}>
           <article className={styles.flightDetails}>
@@ -27,7 +28,6 @@ function Booking({ bookingResult }) {
           </article>
           <article className={styles.pricing}></article>
         </section>
-
         <footer className={styles.footer}></footer>
       </div>
     </>

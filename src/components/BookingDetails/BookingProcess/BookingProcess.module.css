@@ -1,0 +1,27 @@
+.ProcessList {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    height: 50%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .ProcessList li {
+    display: flex;
+    width: 13%;
+    margin-left: 14rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ProcessList li a {
+    text-decoration: none;
+    margin-bottom: 1rem;
+    font-size: 18px;
+    width: 15%;
+    border-radius: 50%;
+    background-color: gray;
+    text-align: center;
+  }
