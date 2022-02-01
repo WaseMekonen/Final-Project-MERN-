@@ -1,43 +1,37 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
-}
+} */
 .header {
+  display: flex;
   height: 400px;
   width: 100vw;
   background-image: url(https://media-exp1.licdn.com/dms/image/C561BAQFOGM8S6gp06w/company-background_10000/0/1638096506282?e=2159024400&v=beta&t=IAyIF6emIIJ1CzM85Gi_RWwyYubPKYQ27NoaQNcHg3g);
   /* background-image: url(https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80); */
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% 100%;
-}
-.slogen {
-  font-size: 29px;
-  text-align: left;
-  position: absolute;
-  top: 14%;
-  left: 11%;
-  height: 35%;
-  width: 48%;
-  color: #4c98e0;
-  background-color: #ffffff00;
+  background-size: 100% 82%;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
-.slogen h1 {
-  color: #2d6edf;
-}
-.slogen h2 {
-  color: #15233c;
-}
 .bookingContainer {
+  display: flex;
   width: 78vw;
   position: relative;
-  height: 171px;
+  height: 196px;
   top: 280px;
   left: 11%;
   border-radius: 12px;
-  background-color: #00203c;
+  background-color: #ffffffec;
   box-shadow: 5px 6px 12px #3c3a3a;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: space-around;
+  border: 2px solid darkgray;
 }
 
 .flightType {
@@ -129,14 +123,13 @@
 
 .main {
   display: flex;
-  height: 400px;
+  height: 650px;
   width: 100vw;
   background-color: rgb(169, 174, 179);
-  flex-direction: row;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-around;
 }
 .cheapFlights {
   margin-left: 25rem;
@@ -158,26 +151,24 @@
   position: absolute;
   display: flex;
   width: 76%;
-  height: 224px;
-  margin-left: 14%;
-  margin-top: 5%;
+  height: 55%;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .destanation {
-  width: 28%;
-  height: 59%;
-  margin-top: 8%;
+  width: 25%;
+  height: 42%;
 }
 .destanation img {
   border-radius: 12px;
   width: 100%;
   height: 100%;
-  border-bottom: 89px solid white;
+  border-bottom: 155px solid white;
 }
 .footer {
-  height: 200px;
+  height: 380px;
   width: 100vw;
   background-color: rgb(11, 53, 82);
 }

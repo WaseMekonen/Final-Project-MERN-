@@ -74,10 +74,6 @@ export default function Home({
   return (
     <div>
       <header className={styles.header}>
-        <div className={styles.slogen}>
-          <h1>Explore</h1>
-          <h2>Your destination with us</h2>
-        </div>
         <SearchBar
           radio={radio}
           setRadio={setRadio}
@@ -103,13 +99,15 @@ export default function Home({
         />
       </header>
       <main className={styles.main}>
-        <div className={styles.cheapFlights}>
-          <h2>Cheap tickets to popular cities</h2>
-          <hr></hr>
-        </div>
         <div className={styles.destinationImagesContainer}>
           <div className={styles.destanation}>
             <img src="images/paris.jpg" alt="paris" />
+            <div className={styles.destanationDetails}>
+              <h2>Paris,France</h2>
+              <h4>$340</h4>
+              <h4>TLV-PAR</h4>
+              <button>Book</button>
+            </div>
           </div>
           <div className={styles.destanation}>
             <img src="images/berlin.jpg" alt="berlin" />
@@ -119,9 +117,7 @@ export default function Home({
           </div>
         </div>
       </main>
-      <footer className={styles.footer}>
-        <h1>hello</h1>
-      </footer>
+      <footer className={styles.footer}></footer>
     </div>
   );
 }

@@ -43,7 +43,7 @@ export default function SearchBar({
   }, [origin, destination, departureDate, returnDate]);
 
   return (
-    <div>
+    <>
       <div className={styles.bookingContainer}>
         <FlightType setRadio={setRadio} radio={radio} />
         <form
@@ -180,6 +180,6 @@ export default function SearchBar({
         </form>
         <div className={styles.searchflight}></div>
       </div>
-    </div>
+    </>
   );
 }

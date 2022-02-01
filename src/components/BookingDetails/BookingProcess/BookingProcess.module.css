@@ -11,10 +11,10 @@
   
   .processList li {
     display: flex;
-    width: 13%;
+    width: 16%;
     flex-direction: column;
     align-items: center;
-  }
+}
   
   .processList li a {
     text-decoration: none;
