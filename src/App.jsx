@@ -1,32 +1,19 @@
-import { useEffect, useState } from "react";
+import {useState} from "react";
 import { Link, Route, BrowserRouter, Switch } from "react-router-dom";
 import Home from "./Screens/Home/Home";
 import FlightsResult from "./Screens/Flights-Results/FlightsResult";
 import Login from "./components/login/login";
 import Register from "./components/register/register";
 import Booking from "./Screens/booking/booking";
-import { getData } from "./Utils/clientFunctions";
 import styles from "./App.module.css";
 
-const flightUrl = "/data/flightsSchedule.json";
-const airportUrl = "/data/elalRouts.json";
 function App() {
   const [auth, setAuth] = useState(null);
-  const [airports, setAirports] = useState([]);
-  const [flightsSchedule, setFlighSchedule] = useState([]);
   const [oneWayTickests, setOneWayTickests] = useState([]);
   const [roundTripTickests, setRoundTripTickests] = useState([]);
   const [search, setSearch] = useState([]);
   const [radio, setRadio] = useState("roundTrip");
   const [bookingResult, setBookingResult] = useState([]);
-
-  useEffect(() => {
-    getData(airportUrl, setAirports);
-  }, []);
-
-  useEffect(() => {
-    getData(flightUrl, setFlighSchedule);
-  }, []);
 
   return (
     <BrowserRouter>
@@ -54,10 +41,6 @@ function App() {
             path="/"
             component={() => (
               <Home
-                setAirports={setAirports}
-                airports={airports}
-                setFlighSchedule={setFlighSchedule}
-                flightsSchedule={flightsSchedule}
                 setOneWayTickests={setOneWayTickests}
                 setRoundTripTickests={setRoundTripTickests}
                 setSearch={setSearch}

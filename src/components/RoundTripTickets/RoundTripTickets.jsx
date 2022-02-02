@@ -49,12 +49,9 @@ export default function RoundTripTickets({
                     </div>
                   </div>
                 </section>
-                <section
-                  className={styles.roundTicketTripFlightPrice}
-                  key={secondTicket[i].id}
-                >
+                <section className={styles.roundTicketTripflightDetails} key={secondTicket[i].id}>
                   <div className={styles.roundTicketTripInnerContainer}>
-                    <div className="flight num">
+                    <div className="flightnum">
                       <h4>{secondTicket[i].flightNumber}</h4>
                     </div>
                     <div className="depArvTime">

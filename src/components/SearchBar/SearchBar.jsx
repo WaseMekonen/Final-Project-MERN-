@@ -1,46 +1,90 @@
 import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import FlightType from "../FlightType/FlightType";
-import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { getData } from "../../Utils/clientFunctions";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./SearchBar.module.css";
 
+const airportUrl = "/data/elalRouts.json";
+const flightUrl = "/data/flightsSchedule.json";
+
 export default function SearchBar({
+  setOneWayTickests,
+  setRoundTripTickests,
+  setSearch,
   radio,
   setRadio,
-  searchedFlight,
-  onChangHandler,
-  onSuggestHandler,
-  origin,
-  setOrigin,
-  destination,
-  setDestination,
-  departureDate,
-  setDepartureDate,
-  returnDate,
-  setReturnDate,
-  setPassengers,
-  passengers,
-  suggestionsOrigin,
-  setSuggestionsOrigin,
-  suggestionsDestination,
-  setSuggestionsDestination,
-  disable,
-  setDisable,
 }) {
+  const [airports, setAirports] = useState([]);
+  const [flightsSchedule, setFlighSchedule] = useState([]);
+  const [origin, setOrigin] = useState("");
+  const [destination, setDestination] = useState("");
+  const [departureDate, setDepartureDate] = useState("");
+  const [returnDate, setReturnDate] = useState("");
+  const [passengers, setPassengers] = useState("");
+  const [suggestionsOrigin, setSuggestionsOrigin] = useState([]);
+  const [suggestionsDestination, setSuggestionsDestination] = useState([]);
   const [redirectToSearchResult, setRedirectToSearchResult] = useState(false);
 
-  const isValid = () => {
-    if ((origin && destination && departureDate && returnDate) !== "") {
-      setDisable(false);
-    } else {
-      return;
-    }
-  };
+  useEffect(() => {
+    getData(airportUrl, setAirports);
+  }, []);
 
   useEffect(() => {
-    isValid();
-  }, [origin, destination, departureDate, returnDate]);
+    getData(flightUrl, setFlighSchedule);
+  }, []);
+
+  const onChangHandler = (text, setValue, setSuggestions) => {
+    let matches = [];
+    if (text.length > 0) {
+      matches = airports.filter((airport) => {
+        const regex = new RegExp(`${text}`, "gi");
+        return airport.city.match(regex);
+      });
+    }
+    setSuggestions(matches);
+    setValue(text);
+  };
+
+  const onSuggestHandler = (text, setText, setState) => {
+    setText(text);
+    setState([]);
+  };
+
+  const searchedFlight = () => {
+    let userFlightSearch = [];
+    if (origin === destination) {
+      alert("You cant choose the same city");
+      return;
+    } else {
+      userFlightSearch.push({
+        origin: origin,
+        destination: destination,
+        departure: departureDate,
+        return: returnDate,
+        passengers: passengers,
+      });
+    }
+    setSearch(userFlightSearch);
+    const test = (a, b) =>
+      flightsSchedule.filter(
+        (flight) => flight.origin.includes(a) && flight.destination.includes(b)
+      );
+    const systemOneWayTickets = test(origin, destination);
+    const systemRoundTripTickests = test(destination, origin);
+    setOneWayTickests(systemOneWayTickets);
+    setRoundTripTickests(systemRoundTripTickests);
+
+    console.log({ systemOneWayTickets });
+    console.log({ systemRoundTripTickests });
+  };
+
+  const isValid =
+    origin !== "" &&
+    destination !== "" &&
+    departureDate !== "" &&
+    returnDate !== "";
 
   return (
     <>
@@ -171,11 +215,20 @@ export default function SearchBar({
           </div>
           <div
             className={
-              disable ? styles.formInputsSearchDisable : styles.formInputsSearch
+              !isValid
+                ? styles.formInputsSearchDisable
+                : styles.formInputsSearch
             }
           >
-            <input type="submit" value="Search Flight" disabled={disable} />
-            {redirectToSearchResult ? <Redirect to="/flightsResult" /> : null}
+            <Link
+              to="/flightsResult"
+              type="submit"
+              className={isValid ? styles.buttonActive : styles.buttonDisable}
+            >
+              Search Flight
+            </Link>
+            {/* <input type="submit" value="Search Flight" disabled={!isValid} /> */}
+            {/* {redirectToSearchResult ? <Redirect to="/flightsResult" /> : null} */}
           </div>
         </form>
         <div className={styles.searchflight}></div>

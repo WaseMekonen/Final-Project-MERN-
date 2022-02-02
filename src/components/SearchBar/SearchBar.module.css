@@ -49,7 +49,10 @@
   flex-direction: column;
 }
 
-.formInputsSearch input {
+.buttonActive {
+  
+  text-decoration: none;
+  text-align: center;
   width: 90%;
   cursor: pointer;
   background-color: #4c98e0;
@@ -60,9 +63,12 @@
   font-size: 142%;
 }
 
-.formInputsSearchDisable input {
+.buttonDisable {
+  text-decoration: none;
+  text-align: center;
   width: 90%;
-  cursor: pointer;
+  cursor: not-allowed;
+  pointer-events: none;
   background-color: #6a6b6b;
   height: 34px;
   color: #464646;

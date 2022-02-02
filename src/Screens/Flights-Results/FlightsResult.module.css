@@ -14,22 +14,20 @@
 }
 .resultsForRoudTrip {
   display: flex;
-  top: 41%;
-  left: 23.2%;
-  position: absolute;
   width: 62%;
-  height: auto;
+  height: 1152px;
   flex-direction: column;
+  margin-top: 3rem;
+  background-color: #ff9911;
 }
 
 .resultsForOneWay {
   display: flex;
-  top: 41%;
-  left: 23.2%;
-  position: absolute;
   width: 62%;
-  height: auto;
+  height: 1200px;
   flex-direction: column;
+  margin-top: 3rem;
+  background-color: #ff9911;
 }
 .footer {
   height: 380px;

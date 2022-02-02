@@ -21,3 +21,12 @@
   justify-content: center;
   align-items: flex-start;
 }
+
+
+.changeDirection {
+  width: 4%;
+  height: 32%;
+  color: white;
+  left: 28rem;
+  cursor: pointer;
+}

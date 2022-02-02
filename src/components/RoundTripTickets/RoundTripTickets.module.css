@@ -1,9 +1,9 @@
-.roudTripticket {
+.roudTripticket{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  height: 25%;
-  width: 91%;
+  justify-content: space-around;
+  height: 20%;
+  width: 90%;
   padding: 1%;
   background-color: #ffffff;
   margin-top: 1%;
@@ -13,17 +13,19 @@
 .roundTicketTripDataContainer {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  height: 99%;
+  width: 75%;
   background-color: antiquewhite;
+  justify-content: space-around;
 }
-.roundTicketTripflightDetails {
+/* .roundTicketTripflightDetails {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
   align-items: center;
   justify-content: space-around;
-}
+} */
 .roundTicketTripInnerContainer {
   display: flex;
   background-color: yellowgreen;
