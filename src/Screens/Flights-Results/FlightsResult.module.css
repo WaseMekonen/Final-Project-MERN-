@@ -1,10 +1,14 @@
 .FlightsResultHeader {
-  height: 300px;
+  position: relative;
+  display: flex;
+  height: 199px;
   width: 100vw;
-  background-color: #dadada;
+}
+.FlightDetailsComponent {
+  position: absolute;
 }
 .FlightsResultContainer {
-  height: 800px;
+  height: 1200px;
   width: 100vw;
   background-color: #dadada;
 }
