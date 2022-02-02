@@ -1,17 +1,10 @@
 import React from "react";
-import styles from "../Screens/Flights-Results/FlightsResult.module.css";
-import OneWay from "./OneWay";
-import RoundTrip from "./RoundTrip";
 
-function FlightDetails({
-  search,
-  oneWayTickests,
-  roundTripTickests,
-  radio,
-  setBookingResult,
-}) {
+import styles from "./FlightDetails.module.css";
+
+function FlightDetails({ search }) {
   return (
-    <div className={styles.FlightsResultContainer}>
+    <>
       {search
         ? search.map((ticket, i) => {
             return (
@@ -35,18 +28,7 @@ function FlightDetails({
             );
           })
         : ""}
-      <div className={styles.results}>
-        {radio == "roundTrip" ? (
-          <RoundTrip
-            roundTripTickests={roundTripTickests}
-            oneWayTickests={oneWayTickests}
-            setBookingResult={setBookingResult}
-          />
-        ) : (
-          <OneWay oneWayTickests={oneWayTickests} />
-        )}
-      </div>
-    </div>
+    </>
   );
 }
 

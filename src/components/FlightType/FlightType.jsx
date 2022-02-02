@@ -1,8 +1,7 @@
 import React from "react";
-import styles from "../../src/Screens/Home/Home.module.css";
+import styles from "./FlightType.module.css";
 
-
-function FlightType({setRadio,radio}) {
+function FlightType({ setRadio, radio }) {
   return (
     <div>
       <div className={styles.flightType}>

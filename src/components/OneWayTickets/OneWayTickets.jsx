@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "../Screens/Flights-Results/FlightsResult.module.css";
+import styles from "./OneWayTickets.module.css";
 
-function OneWay({ oneWayTickests }) {
+function OneWayTickets({ oneWayTickests }) {
   const oneWayElements = oneWayTickests
     ? oneWayTickests.map((ticket, i) => (
-        <div className={styles.ticket} key={i}>
-          <section className={styles.flightDetails}>
-            <div className={styles.ticketOne}>
+        <div className={styles.OneWayticket} key={i}>
+          <section className={styles.OneWayflightDetails}>
+            <div className={styles.OneWayticketOne}>
               <div className="flight num">
                 <h4>{ticket.flightNumber}</h4>
               </div>
@@ -25,7 +25,7 @@ function OneWay({ oneWayTickests }) {
               </div>
             </div>
           </section>
-          <section className={styles.flightPrice}>
+          <section className={styles.OneWayflightPrice}>
             <div className="icon">
               <span>icon</span>
             </div>
@@ -43,4 +43,4 @@ function OneWay({ oneWayTickests }) {
   return <>{oneWayElements}</>;
 }
 
-export default OneWay;
+export default OneWayTickets;

@@ -1,9 +1,10 @@
 import React from "react";
-import styles from "../Screens/Flights-Results/FlightsResult.module.css";
-import { Redirect } from "react-router-dom";
-import { useState } from "react";
+import styles from "./RoundTripTickets.module.css";
 
-export default function RoundTrip({
+// import { Redirect } from "react-router-dom";
+// import { useState } from "react";
+
+export default function RoundTripTickets({
   roundTripTickests,
   oneWayTickests,
   setBookingResult,
@@ -27,9 +28,9 @@ export default function RoundTrip({
         return (
           <>
             <div className={styles.roudTripticket} key={ticket.id}>
-              <div className={styles.roundTicketDataContainer}>
-                <section className={styles.flightDetails}>
-                  <div className={styles.roundTicketInnerContainer}>
+              <div className={styles.roundTicketTripDataContainer}>
+                <section className={styles.roundTicketTripflightDetails}>
+                  <div className={styles.roundTicketTripInnerContainer}>
                     <div className="flight num">
                       <h4>{ticket.flightNumber}</h4>
                     </div>
@@ -48,8 +49,11 @@ export default function RoundTrip({
                     </div>
                   </div>
                 </section>
-                <section className={styles.flightDetails} key={secondTicket[i].id}>
-                  <div className={styles.roundTicketInnerContainer}>
+                <section
+                  className={styles.roundTicketTripFlightPrice}
+                  key={secondTicket[i].id}
+                >
+                  <div className={styles.roundTicketTripInnerContainer}>
                     <div className="flight num">
                       <h4>{secondTicket[i].flightNumber}</h4>
                     </div>
@@ -69,7 +73,7 @@ export default function RoundTrip({
                   </div>
                 </section>
               </div>
-              <section className={styles.flightPrice}>
+              <section className={styles.roundTicketTripFlightPrice}>
                 <div className="icon">
                   <span>icon</span>
                 </div>

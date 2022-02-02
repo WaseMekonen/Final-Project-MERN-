@@ -1,0 +1,38 @@
+.userSearch {
+    display: flex;
+    background-color: #1b234a;
+    position: absolute;
+    width: 59rem;
+    height: 5rem;
+    margin: 5rem 8rem;
+  }
+  .userInputsTrom,
+  .userInputsTo,
+  .userInputsDate {
+    margin-left: 1%;
+    width: 18%;
+    height: 40%;
+    margin-top: 2.5%;
+    margin-right: 2%;
+    background-color: white;
+    border-radius: 12px;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .userChangeFlight {
+    margin-left: 1%;
+    width: 18%;
+    height: 40%;
+    margin-top: 2.5%;
+    margin-right: 2%;
+    background-color: white;
+    border-radius: 12px;
+    color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }

@@ -1,9 +1,14 @@
+.FlightsResultHeader {
+  height: 300px;
+  width: 100vw;
+  background-color: #dadada;
+}
 .FlightsResultContainer {
   height: 800px;
   width: 100vw;
   background-color: #dadada;
 }
-.results {
+.resultsForRoudTrip {
   display: flex;
   top: 41%;
   left: 23.2%;
@@ -13,111 +18,17 @@
   flex-direction: column;
 }
 
-.ticket {
+.resultsForOneWay {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  height: 25%;
-  width: 91%;
-  padding: 1%;
-  background-color: #ffffff;
-  margin-top: 1%;
-  margin-left: 6.5%;
-  border-radius: 12px;
-}
-.roudTripticket {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  height: 25%;
-  width: 91%;
-  padding: 1%;
-  background-color: #ffffff;
-  margin-top: 1%;
-  margin-left: 6.5%;
-  border-radius: 12px;
-}
-.flightDetails {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: space-around;
-}
-.roundTicketDataContainer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background-color: antiquewhite;
-}
-
-.roundTicketInnerContainer {
-  display: flex;
-  background-color: yellowgreen;
-  align-items: center;
-  align-content: space-around;
-  flex-direction: row;
-  width: 100%;
-  height: 94%;
-}
-
-.ticketOne {
-  display: flex;
-  align-items: center;
-  align-content: space-around;
-  flex-direction: row;
-}
-
-.flightPrice {
-  display: flex;
-  flex-direction: column;
+  top: 41%;
+  left: 23.2%;
+  position: absolute;
+  width: 62%;
   height: auto;
-  width: 21%;
-  justify-content: space-around;
-  align-items: center;
+  flex-direction: column;
 }
 .footer {
-  height: 200px;
+  height: 380px;
   width: 100vw;
   background-color: rgb(11, 53, 82);
-}
-
-.userSearch {
-  display: flex;
-  background-color: #1b234a;
-  position: absolute;
-  width: 59rem;
-  height: 5rem;
-  margin: 5rem 8rem;
-}
-.userInputsTrom,
-.userInputsTo,
-.userInputsDate {
-  margin-left: 1%;
-  width: 18%;
-  height: 40%;
-  margin-top: 2.5%;
-  margin-right: 2%;
-  background-color: white;
-  border-radius: 12px;
-  color: gray;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-}
-.userChangeFlight {
-  margin-left: 1%;
-  width: 18%;
-  height: 40%;
-  margin-top: 2.5%;
-  margin-right: 2%;
-  background-color: white;
-  border-radius: 12px;
-  color: gray;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
 }

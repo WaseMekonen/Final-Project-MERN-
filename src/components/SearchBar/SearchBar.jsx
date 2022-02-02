@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import styles from "../../src/Screens/Home/Home.module.css";
-import FlightType from "./FlightType";
+import FlightType from "../FlightType/FlightType";
 import { Redirect } from "react-router-dom";
+import "react-datepicker/dist/react-datepicker.css";
+import styles from "./SearchBar.module.css";
 
 export default function SearchBar({
   radio,

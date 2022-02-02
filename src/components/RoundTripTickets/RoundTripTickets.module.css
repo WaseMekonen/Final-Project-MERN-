@@ -1,0 +1,45 @@
+.roudTripticket {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 25%;
+  width: 91%;
+  padding: 1%;
+  background-color: #ffffff;
+  margin-top: 1%;
+  margin-left: 6.5%;
+  border-radius: 12px;
+}
+.roundTicketTripDataContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: antiquewhite;
+}
+.roundTicketTripflightDetails {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+.roundTicketTripInnerContainer {
+  display: flex;
+  background-color: yellowgreen;
+  align-items: center;
+  align-content: space-around;
+  flex-direction: row;
+  width: 100%;
+  height: 94%;
+}
+
+.roundTicketTripFlightPrice {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 21%;
+  justify-content: space-around;
+  align-items: center;
+}
+

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SearchBar from "../../components/SearchBar";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import styles from "./Home.module.css";
 
 export default function Home({
