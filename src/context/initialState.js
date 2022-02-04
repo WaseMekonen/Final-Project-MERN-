@@ -1,10 +1,11 @@
 export default {
   auth: null,
-  airports: [],
-  flightsSchedule: [],
-  oneWayTickests: [],
-  roundTripTickests: [],
-  search: [],
-  radio: "roundTrip",
-  bookingResult: [],
+  tickets: { origin: null, destenation: null },
+  searchInputs: {
+    destenation: "",
+    origin: "",
+    returnDate: "",
+    detartureDate: "",
+  },
+  searchResult: [],
 };

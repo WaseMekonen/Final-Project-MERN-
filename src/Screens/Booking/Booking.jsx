@@ -3,41 +3,41 @@ import BookingPricing from "../../components/BookingDetails/BookingPricing/Booki
 import BookingProcess from "../../components/BookingDetails/BookingProcess/BookingProcess";
 import BookingTicket from "../../components/BookingDetails/BookingTicket/BookingTicket";
 import BookingTravelDetails from "../../components/BookingDetails/BookingTravelDetails/BookingTravelDetails";
+
 import styles from "./Booking.module.css";
 
-function Booking({ bookingResult }) {
-  console.log(bookingResult);
+const Booking = ({ bookingResult }) => {
   return (
-    <>
-      <div className={styles.bookingContainer}>
-        <section className={styles.ticketingProcess}>
-          <BookingProcess />
-        </section>
-        <section className={styles.totalDetails}>
-          <article className={styles.flightDetails}>
-            <div className={styles.currentFlight}>
+    <div className={styles.bookingContainer}>
+      <section className={styles.ticketingProcess}>
+        <BookingProcess />
+      </section>
+      <section className={styles.totalDetails}>
+        <article className={styles.flightDetails}>
+          <div className={styles.currentFlight}>
+            <div className={styles.flightDetailsHeading}>
               <h3>Flight Details</h3>
-              <article className={styles.bookingFlightDetails}>
-                <BookingTicket bookingResult={bookingResult} />
-              </article>
             </div>
+            <article className={styles.bookingFlightDetails}>
+              <BookingTicket bookingResult={bookingResult} />
+            </article>
+          </div>
 
-            <div className={styles.travelerDetails}>
-              <div className={styles.travelerDetailsHeading}>
-                <h3>Traveler Details</h3>
-              </div>
-              <BookingTravelDetails />
+          <div className={styles.travelerDetails}>
+            <div className={styles.travelerDetailsHeading}>
+              <h3>Traveler Details</h3>
             </div>
-          </article>
-          <article className={styles.pricingContainer}>
-            <BookingPricing />
-          </article>
-        </section>
-        <footer className={styles.footer}></footer>
-      </div>
-    </>
+            <BookingTravelDetails />
+          </div>
+        </article>
+        <article className={styles.pricingContainer}>
+          <BookingPricing />
+        </article>
+      </section>
+      <footer className={styles.footer}></footer>
+    </div>
   );
-}
+};
 
 export default Booking;
 

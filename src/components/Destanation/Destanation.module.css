@@ -1,0 +1,10 @@
+.destanation {
+  width: 25%;
+  height: 42%;
+}
+.destanation img {
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  border-bottom: 155px solid white;
+}

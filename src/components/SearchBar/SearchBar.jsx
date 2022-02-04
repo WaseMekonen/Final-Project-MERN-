@@ -84,7 +84,7 @@ export default function SearchBar({
     origin !== "" &&
     destination !== "" &&
     departureDate !== "" &&
-    returnDate !== "";
+    (returnDate !== ""|| radio === "oneWay")
 
   return (
     <>
@@ -94,10 +94,6 @@ export default function SearchBar({
           className={styles.flightForm}
           onSubmit={(e) => {
             e.preventDefault();
-            if (isValid) {
-              searchedFlight();
-              setRedirectToSearchResult(true);
-            }
           }}
         >
           <div className={styles.formInputs}>
@@ -222,13 +218,11 @@ export default function SearchBar({
           >
             <Link
               to="/flightsResult"
-              type="submit"
               className={isValid ? styles.buttonActive : styles.buttonDisable}
+              onClick={searchedFlight}
             >
               Search Flight
             </Link>
-            {/* <input type="submit" value="Search Flight" disabled={!isValid} /> */}
-            {/* {redirectToSearchResult ? <Redirect to="/flightsResult" /> : null} */}
           </div>
         </form>
         <div className={styles.searchflight}></div>

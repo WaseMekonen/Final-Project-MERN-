@@ -4,11 +4,11 @@ import styles from "./RoundTripTickets.module.css";
 // import { Redirect } from "react-router-dom";
 // import { useState } from "react";
 
-export default function RoundTripTickets({
+const RoundTripTickets = ({
   roundTripTickests,
   oneWayTickests,
   setBookingResult,
-}) {
+}) => {
   const passTicketToBooking = (oneWayTicketId, roundTripTicketId) => {
     const roundTripTicketForBooking = [];
     const foundOneWayTicket = oneWayTickests.find((ticket) => {
@@ -24,7 +24,7 @@ export default function RoundTripTickets({
 
   const roundTripElements = oneWayTickests
     ? oneWayTickests.map((ticket, i) => {
-        const secondTicket = Object.values(roundTripTickests);
+        const [secondTicket] = Object.values(roundTripTickests);
         return (
           <>
             <div className={styles.roudTripticket} key={ticket.id}>
@@ -49,26 +49,31 @@ export default function RoundTripTickets({
                     </div>
                   </div>
                 </section>
-                <section className={styles.roundTicketTripflightDetails} key={secondTicket[i].id}>
-                  <div className={styles.roundTicketTripInnerContainer}>
-                    <div className="flightnum">
-                      <h4>{secondTicket[i].flightNumber}</h4>
+                {secondTicket && (
+                  <section
+                    className={styles.roundTicketTripflightDetails}
+                    key={secondTicket.id}
+                  >
+                    <div className={styles.roundTicketTripInnerContainer}>
+                      <div className="flightnum">
+                        <h4>{secondTicket.flightNumber}</h4>
+                      </div>
+                      <div className="depArvTime">
+                        <h4>
+                          {secondTicket.departure} - {secondTicket.arrival}
+                        </h4>
+                      </div>
+                      <div className="fromTo">
+                        <h4>{secondTicket.origin}</h4>
+                        <h4>{secondTicket.destination}</h4>
+                      </div>
+                      <div className="total">
+                        <h4>{secondTicket.terminal}</h4>
+                        <h4>06h 00m</h4>
+                      </div>
                     </div>
-                    <div className="depArvTime">
-                      <h4>
-                        {secondTicket[i].departure} - {secondTicket[i].arrival}
-                      </h4>
-                    </div>
-                    <div className="fromTo">
-                      <h4>{secondTicket[i].origin}</h4>
-                      <h4>{secondTicket[i].destination}</h4>
-                    </div>
-                    <div className="total">
-                      <h4>{secondTicket[i].terminal}</h4>
-                      <h4>06h 00m</h4>
-                    </div>
-                  </div>
-                </section>
+                  </section>
+                )}
               </div>
               <section className={styles.roundTicketTripFlightPrice}>
                 <div className="icon">
@@ -94,4 +99,6 @@ export default function RoundTripTickets({
     : null;
 
   return <>{roundTripElements}</>;
-}
+};
+
+export default RoundTripTickets;

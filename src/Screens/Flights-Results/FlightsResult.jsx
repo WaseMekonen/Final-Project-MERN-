@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import FlightDetails from "../../components/FlightDetails/FlightDetails";
 import OneWayTickets from "../../components/OneWayTickets/OneWayTickets";
+import { AppContext } from "../../components/ProviderWrapper/ProviderWrapper";
 import RoundTripTickets from "../../components/RoundTripTickets/RoundTripTickets";
 import styles from "./FlightsResult.module.css";
 
-export default function FlightsResult({
+const FlightsResult = ({
   oneWayTickests,
   search,
   roundTripTickests,
   radio,
   setBookingResult,
-}) {
+}) => {
+  const { tickets } = useContext(AppContext);
+  console.log("tickets: ", tickets);
   return (
     <>
       <header className={styles.FlightsResultHeader}>
@@ -40,4 +43,5 @@ export default function FlightsResult({
       <footer className={styles.footer}></footer>
     </>
   );
-}
+};
+export default FlightsResult;

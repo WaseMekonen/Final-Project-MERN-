@@ -22,10 +22,7 @@ function FlightDetails({ search }) {
                   placeholder={ticket.destination}
                 />
 
-                <input
-                  className={styles.userInputsDate}
-                  type="text"
-                />
+                <input className={styles.userInputsDate} type="text" />
 
                 <input className={styles.userChangeFlight} type="submit" />
               </section>
