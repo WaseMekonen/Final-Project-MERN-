@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from "react";
-import reducer from "../../context/reducer";
-import initialState from "../../context/initialState";
-import actions from "../../context/actions";
+import reducer from "../../../Hooks/context/reducer";
+import initialState from "../../../Hooks/context/initialState";
+import actions from "../../../Hooks/context/actions";
 
 export const AppContext = createContext();
 

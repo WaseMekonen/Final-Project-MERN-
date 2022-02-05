@@ -7,18 +7,21 @@
 .FlightDetailsComponent {
   position: absolute;
 }
-.FlightsResultContainer {
+.FlightsResultContainer{
+  display: flex;
   height: 1200px;
   width: 100vw;
   background-color: #dadada;
+  justify-content: center;
 }
+
 .resultsForRoudTrip {
   display: flex;
   width: 62%;
-  height: 1152px;
+  height: auto;
   flex-direction: column;
   margin-top: 3rem;
-  background-color: #ff9911;
+  background-color: #c8c8c8;
 }
 
 .resultsForOneWay {
