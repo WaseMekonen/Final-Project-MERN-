@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
-import DatePicker from "react-datepicker";
 import FlightType from "../FlightType/FlightType";
 import { Link } from "react-router-dom";
 import { getData } from "../../Utils/clientFunctions";
+import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./SearchBar.module.css";
 
 const airportUrl = "/data/elalRouts.json";
 const flightUrl = "/data/flightsSchedule.json";
 
-export default function SearchBar({
+const SearchBar = ({
   setOneWayTickests,
   setRoundTripTickests,
   setSearch,
   radio,
   setRadio,
-}) {
+}) => {
   const [airports, setAirports] = useState([]);
   const [flightsSchedule, setFlighSchedule] = useState([]);
   const [origin, setOrigin] = useState("");
@@ -25,7 +25,6 @@ export default function SearchBar({
   const [passengers, setPassengers] = useState("");
   const [suggestionsOrigin, setSuggestionsOrigin] = useState([]);
   const [suggestionsDestination, setSuggestionsDestination] = useState([]);
-  const [redirectToSearchResult, setRedirectToSearchResult] = useState(false);
 
   useEffect(() => {
     getData(airportUrl, setAirports);
@@ -84,7 +83,7 @@ export default function SearchBar({
     origin !== "" &&
     destination !== "" &&
     departureDate !== "" &&
-    (returnDate !== ""|| radio === "oneWay")
+    (returnDate !== "" || radio === "oneWay");
 
   return (
     <>
@@ -229,4 +228,6 @@ export default function SearchBar({
       </div>
     </>
   );
-}
+};
+
+export default SearchBar;

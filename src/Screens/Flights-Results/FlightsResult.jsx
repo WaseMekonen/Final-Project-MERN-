@@ -3,6 +3,7 @@ import FlightDetails from "../../components/FlightDetails/FlightDetails";
 import OneWayTickets from "../../components/OneWayTickets/OneWayTickets";
 import { AppContext } from "../../components/ProviderWrapper/ProviderWrapper";
 import RoundTripTickets from "../../components/RoundTripTickets/RoundTripTickets";
+// import SearchBar from "../../components/SearchBar/SearchBar";
 import styles from "./FlightsResult.module.css";
 
 const FlightsResult = ({
@@ -17,6 +18,7 @@ const FlightsResult = ({
   return (
     <>
       <header className={styles.FlightsResultHeader}>
+        {/* <SearchBar className={styles.resultPageSearchBar}/> */}
         <FlightDetails
           search={search}
           oneWayTickests={oneWayTickests}

@@ -1,34 +1,52 @@
 import React from "react";
-import { FaExchangeAlt } from "react-icons/fa";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import styles from "./FlightDetails.module.css";
 
 function FlightDetails({ search }) {
   return (
     <>
-      {search
-        ? search.map((ticket, i) => {
-            return (
-              <section className={styles.userSearch} key={i}>
-                <div className={styles.userInputsTfrom}>
-                  <input type="text" placeholder={ticket.origin} />
-                  <FaExchangeAlt className={styles.changeDirection}>
-                    Change Direction
-                  </FaExchangeAlt>
-                </div>
-
-                <input
-                  className={styles.userInputsTo}
-                  type="text"
-                  placeholder={ticket.destination}
-                />
-
-                <input className={styles.userInputsDate} type="text" />
-
-                <input className={styles.userChangeFlight} type="submit" />
-              </section>
-            );
-          })
-        : ""}
+      {search && (
+        <form className={styles.userSearch} key={search.origin}>
+          <div className={styles.searchInputs}>
+            <input
+              className={styles.FromInput}
+              type="text"
+              placeholderText="Origin"
+            />
+          </div>
+          <div className={styles.searchInputs}>
+            <input
+              type="text"
+              className={styles.ToInput}
+              placeholderText="Destanition"
+            />
+          </div>
+          <div className={styles.searchInputs}>
+            <DatePicker
+              className={styles.departureInput}
+              placeholderText="Departure"
+              dateFormat="dd/MM/yyyy"
+              minDate={new Date()}
+            ></DatePicker>
+          </div>
+          <div className={styles.searchInputs}>
+            <DatePicker
+              className={styles.returnInput}
+              placeholderText="Return"
+              dateFormat="dd/MM/yyyy"
+              minDate={new Date()}
+            ></DatePicker>
+          </div>
+          <div className={styles.searchInputs}>
+            <input
+              className={styles.changeFlightBtn}
+              type="submit"
+              value="Search Flights"
+            />
+          </div>
+        </form>
+      )}
     </>
   );
 }
