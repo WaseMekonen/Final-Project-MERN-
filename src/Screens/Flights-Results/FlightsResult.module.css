@@ -15,7 +15,8 @@
   justify-content: center;
 }
 
-.resultsForRoudTrip {
+.resultsForRoudTrip,
+.resultsForOneWay {
   display: flex;
   width: 62%;
   height: auto;
@@ -23,14 +24,6 @@
   margin-top: 3rem;
 }
 
-.resultsForOneWay {
-  display: flex;
-  width: 62%;
-  height: 1200px;
-  flex-direction: column;
-  margin-top: 3rem;
-  background-color: #ff9911;
-}
 .footer {
   height: 380px;
   width: 100vw;
