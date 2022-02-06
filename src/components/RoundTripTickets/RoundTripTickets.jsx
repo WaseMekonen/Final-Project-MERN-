@@ -26,7 +26,6 @@ const RoundTripTickets = ({
   const roundTripElements = oneWayTickests
     ? oneWayTickests.map((ticket, i) => {
         const secondTicket = Object.values(roundTripTickests);
-        const userSearch = Object.values(search);
         return (
           <>
             <div className={styles.roudTripticket} key={ticket.id}>
@@ -47,7 +46,6 @@ const RoundTripTickets = ({
                     </div>
                     <div className="total">
                       <h4>{ticket.terminal}</h4>
-                      <h4>{search.origin}</h4>
                     </div>
                   </div>
                 </section>
@@ -83,12 +81,13 @@ const RoundTripTickets = ({
                   <span></span>
                 </div>
                 <div className="price">
-                  <span>{"$"+ticket.price*3}</span>
+                  <span>{"$" + ticket.price * 3}</span>
                 </div>
                 <div className="button">
                   <button
                     onClick={() => {
                       passTicketToBooking(ticket.id, secondTicket[i].id);
+                      
                     }}
                   >
                     Book

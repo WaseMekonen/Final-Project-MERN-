@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import { FIREBASE_KEY } from "../../../logic/key";
 import { AppContext } from "../ProviderWrapper/ProviderWrapper";
 import axios from "axios";
@@ -37,54 +38,58 @@ function Login() {
   }, []);
 
   return (
-    <div>
-      <form
-        className={styles.login}
-        onSubmit={(e) => {
-          e.preventDefault();
-          setAuth(true);
-          signIn();
+    <section className={styles.loginContainer}>
+      <article className={styles.left}>
+        <form
+          className={styles.login}
+          onSubmit={(e) => {
+            e.preventDefault();
+            setAuth(true);
+            signIn();
+            e.target[0].value = "";
+            e.target[1].value = "";
+          }}
+        >
+          <div className={styles.headline}>
+            <h2>Sign In</h2>
+          </div>
+          <div className={styles.formInputs}>
+            <div className={styles.formInputsInput}>
+              <input
+                type="email"
+                placeholder="Email"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+            </div>
+            <div>
+              {error ? (
+                <p style={{ color: "red" }}>Wrong password! try again</p>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className={styles.loginBtnContainer}>
+              <input className={styles.loginBtn} type="submit" value="SignIn" />
+            </div>
+          </div>
+          <div></div>
 
-          e.target[0].value = "";
-          e.target[1].value = "";
-        }}
-      >
-        <div className={styles.headline}>
-          <h2>Sign In</h2>
-        </div>
-        <div className={styles.formInputs}>
-          <div className={styles.formInputsInput}>
-            <input
-              type="email"
-              placeholder="Email"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-            />
+          <div className={styles.haveAcount}>
+            Do not have an account?<Link to="/register">Register</Link>{" "}
           </div>
-          <div>
-            {error ? (
-              <p style={{ color: "red" }}>Wrong password! try again</p>
-            ) : (
-              ""
-            )}
-          </div>
-          <div className={styles.loginBtnContainer}>
-            <input className={styles.loginBtn} type="submit" value="SignIn" />
-          </div>
-        </div>
-        <div></div>
-
-        <div className={styles.haveAcount}>Do not have an account?</div>
-      </form>
-    </div>
+        </form>
+      </article>
+      <article className={styles.right}></article>
+    </section>
   );
 }
 

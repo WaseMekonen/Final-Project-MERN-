@@ -18,7 +18,6 @@ const App = () => {
   const [radio, setRadio] = useState("roundTrip");
   const [bookingResult, setBookingResult] = useState([]);
 
-  console.log(search);
 
   return (
     <ProviderWrapper>

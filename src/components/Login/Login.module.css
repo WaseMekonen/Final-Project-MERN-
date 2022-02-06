@@ -1,12 +1,36 @@
+.loginContainer {
+  filter: drop-shadow(2px 4px 6px gray);
+  display: flex;
+  width: 39rem;
+  height: 356px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid;
+  margin-left: 16rem;
+}
+.left {
+  display: flex;
+  width: 70%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.right {
+  background-image: url(https://media.istockphoto.com/vectors/paper-layer-blue-abstract-background-use-for-banner-cover-poster-vector-id1189542390?k=20&m=1189542390&s=170667a&w=0&h=FeA2CVy0VLs8YC_EYb784TVe0jNGfoj-Lg7HBrP4pQ8=);
+  background-size: 100% 100%;
+  width: 40%;
+  height: 100%;
+}
+
 .login {
   display: flex;
   flex-direction: column;
-  height: 373px;
+  height: 100%;
   background-color: #ffffff;
-  margin: 3% 38% 0% 38%;
-  border-radius: 12px;
-  border: 1px solid gray;
+  justify-content: space-evenly;
 }
+
 .headline {
   display: flex;
   justify-content: center;
@@ -14,7 +38,7 @@
 
 .formInputs {
   display: flex;
-  height: 276px;
+  height: 74%;
   flex-direction: column;
   justify-content: space-between;
 }

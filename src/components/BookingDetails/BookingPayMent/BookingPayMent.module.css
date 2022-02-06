@@ -14,9 +14,9 @@
   align-items: center;
   justify-content: space-around;
 }
-.payMentContainer{
+.payMentContainer {
   display: flex;
-  width: 65%;
+  width: 100%;
   height: 80%;
   flex-direction: row;
   align-content: space-around;
@@ -55,10 +55,12 @@
 
 .ExpirationDate {
   display: flex;
-  height: 38%;
-  width: 88%;
+  height: 35%;
+  width: 68%;
   justify-content: space-between;
-  flex-direction: row;
+}
+.ExpirationDate input {
+  width: 45%;
 }
 
 .payMentDetailsCardCvc {

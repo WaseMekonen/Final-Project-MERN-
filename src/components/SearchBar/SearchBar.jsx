@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { AppContext } from "../ProviderWrapper/ProviderWrapper";
 import FlightType from "../FlightType/FlightType";
 import { Link } from "react-router-dom";
 import { getData } from "../../Utils/clientFunctions";
@@ -16,6 +17,8 @@ const SearchBar = ({
   radio,
   setRadio,
 }) => {
+  const { searchResult } = useContext(AppContext);
+
   const [airports, setAirports] = useState([]);
   const [flightsSchedule, setFlighSchedule] = useState([]);
   const [origin, setOrigin] = useState("");
@@ -66,6 +69,9 @@ const SearchBar = ({
       });
     }
     setSearch(userFlightSearch);
+
+    console.log(searchResult);
+
     const systemTickets = (a, b) =>
       flightsSchedule.filter(
         (flight) => flight.origin.includes(a) && flight.destination.includes(b)

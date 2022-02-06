@@ -1,23 +1,16 @@
 .header {
-  /* display: flex; */
   height: 400px;
   width: 100vw;
   background-image: url(https://media-exp1.licdn.com/dms/image/C561BAQFOGM8S6gp06w/company-background_10000/0/1638096506282?e=2159024400&v=beta&t=IAyIF6emIIJ1CzM85Gi_RWwyYubPKYQ27NoaQNcHg3g);
-  /* background-image: url(https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80); */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 82%;
-  /* flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap; */
 }
 .bookingContainer {
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
-  /* display: flex; */
   width: 78vw;
   position: relative;
   height: 196px;
@@ -46,11 +39,12 @@
 .destinationImagesContainer {
   position: absolute;
   display: flex;
-  width: 76%;
-  height: 55%;
+  width: 91%;
+  height: 95%;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .footer {

@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { BsFillPersonFill } from "react-icons/bs";
+
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
@@ -16,9 +18,12 @@ const Navbar = () => {
         <Link to="/flightsResult">FlightResult</Link>
         <Link to="/booking">Booking</Link>
       </div>
-      <div className={styles.login}>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
+      <div className={styles.userConected}>
+        <div className={styles.userLogin}>
+          <Link to="/login">
+            <BsFillPersonFill /> Login
+          </Link>
+        </div>
       </div>
     </div>
   );

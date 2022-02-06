@@ -15,8 +15,8 @@ const Booking = ({ bookingResult }) => {
       </section>
       <section className={styles.totalDetails}>
         <article className={styles.flightDetails}>
-          {/* <BookingTicket bookingResult={bookingResult} /> */}
-          <BookingPayMent />
+          <BookingTicket bookingResult={bookingResult} />
+          {/* <BookingPayMent /> */}
           <div className={styles.travelerDetails}>
             <div className={styles.travelerDetailsHeading}>
               <h3>Traveler Details</h3>

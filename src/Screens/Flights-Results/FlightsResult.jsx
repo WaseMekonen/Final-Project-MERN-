@@ -17,7 +17,6 @@ const FlightsResult = ({
   return (
     <>
       <header className={styles.FlightsResultHeader}>
-        {/* <SearchBar className={styles.resultPageSearchBar}/> */}
         <FlightDetails
           search={search}
           oneWayTickests={oneWayTickests}
@@ -30,7 +29,6 @@ const FlightsResult = ({
         {radio == "roundTrip" ? (
           <div className={styles.resultsForRoudTrip}>
             <RoundTripTickets
-              search={search}
               roundTripTickests={roundTripTickests}
               oneWayTickests={oneWayTickests}
               setBookingResult={setBookingResult}

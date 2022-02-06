@@ -5,11 +5,15 @@ const Destanation = ({ city, price, airport, image }) => {
   return (
     <div className={styles.destanation}>
       <img src={image} alt={city} />
-      <div>
-        <h2>{city}</h2>
-        <h4>{price}</h4>
-        <h4>{airport}</h4>
-        <button>Book</button>
+      <div className={styles.destanationDetails}>
+        <div className={styles.destanationLeft}>
+          <h3>{city}</h3>
+          <h4>{price}</h4>
+          <h5>{airport}</h5>
+        </div>
+        <div className={styles.destanationRight}>
+          <button>Book</button>
+        </div>
       </div>
     </div>
   );
