@@ -5,9 +5,6 @@ function BookingPricing() {
   return (
     <>
       <article className={styles.pricing}>
-        <div className={styles.alertMessage}>
-          <div className={styles.message}></div>
-        </div>
         <div className={styles.priceTitle}>
           <h2>Price Details</h2>
         </div>
@@ -29,6 +26,9 @@ function BookingPricing() {
           </div>
           <div>
             <span>$384</span>
+          </div>
+          <div className={styles.alertMessage}>
+            <div className={styles.message}></div>
           </div>
         </div>
       </article>

@@ -8,7 +8,8 @@
     "origin": "London, United Kingdom",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 2 - Arr: 3"
+    "terminal": "Dep: 2 - Arr: 3",
+    "price": "342"
   },
   {
     "id": "2",
@@ -19,7 +20,8 @@
     "origin": "Dubai, United Arab Emirates",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 1 - Arr: 3"
+    "terminal": "Dep: 1 - Arr: 3",
+    "price": "342"
   },
   {
     "id": "3",
@@ -30,7 +32,8 @@
     "origin": "Dubai, United Arab Emirates",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 1 - Arr: 3"
+    "terminal": "Dep: 1 - Arr: 3",
+    "price": "342"
   },
   {
     "id": "4",
@@ -41,7 +44,8 @@
     "origin": "Dubai, United Arab Emirates",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 1 - Arr: 3"
+    "terminal": "Dep: 1 - Arr: 3",
+    "price": "342"
   },
   {
     "id": "5",
@@ -52,7 +56,8 @@
     "origin": "Madrid, Spain",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 4S - Arr: 3"
+    "terminal": "Dep: 4S - Arr: 3",
+    "price": "342"
   },
   {
     "id": "6",
@@ -63,7 +68,8 @@
     "origin": "Newark, United States",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: B - Arr: 3"
+    "terminal": "Dep: B - Arr: 3",
+    "price": "342"
   },
   {
     "id": "7",
@@ -74,7 +80,8 @@
     "origin": "New York, United States",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 4 - Arr: 3"
+    "terminal": "Dep: 4 - Arr: 3",
+    "price": "342"
   },
   {
     "id": "8",
@@ -85,7 +92,8 @@
     "origin": "Tel Aviv-Yafo, Israel",
     "destinationCode": "LHR",
     "destination": "London, United Kingdom",
-    "terminal": "Dep: 3 - Arr: 2"
+    "terminal": "Dep: 3 - Arr: 2",
+    "price": "342"
   },
   {
     "id": "9",
@@ -96,7 +104,8 @@
     "origin": "Kiev, Ukraine",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: D - Arr: 3"
+    "terminal": "Dep: D - Arr: 3",
+    "price": "342"
   },
   {
     "id": "10",
@@ -107,7 +116,8 @@
     "origin": "Paris, France",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 2A - Arr: 3"
+    "terminal": "Dep: 2A - Arr: 3",
+    "price": "342"
   },
   {
     "id": "11",
@@ -118,7 +128,8 @@
     "origin": "Milan, Italy",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 1 - Arr: 3"
+    "terminal": "Dep: 1 - Arr: 3",
+    "price": "342"
   },
   {
     "id": "12",
@@ -129,7 +140,8 @@
     "origin": "Tel Aviv-Yafo, Israel",
     "destinationCode": "EWR",
     "destination": "Newark, United States",
-    "terminal": "Dep: 3 - Arr: B"
+    "terminal": "Dep: 3 - Arr: B",
+    "price": "342"
   },
   {
     "id": "13",
@@ -140,7 +152,8 @@
     "origin": "Tel Aviv-Yafo, Israel",
     "destinationCode": "JFK",
     "destination": "New York, United States",
-    "terminal": "Dep: 3 - Arr: 4"
+    "terminal": "Dep: 3 - Arr: 4",
+    "price": "342"
   },
   {
     "id": "14",
@@ -151,7 +164,8 @@
     "origin": "Tel Aviv-Yafo, Israel",
     "destinationCode": "DXB",
     "destination": "Dubai, United Arab Emirates",
-    "terminal": "Dep: 3 - Arr: 1"
+    "terminal": "Dep: 3 - Arr: 1",
+    "price": "342"
   },
   {
     "id": "15",
@@ -162,7 +176,8 @@
     "origin": "Tel Aviv-Yafo, Israel",
     "destinationCode": "DXB",
     "destination": "Dubai, United Arab Emirates",
-    "terminal": "Dep: 3 - Arr: 1"
+    "terminal": "Dep: 3 - Arr: 1",
+    "price": "342"
   },
   {
     "id": "16",
@@ -173,7 +188,8 @@
     "origin": "Tel Aviv-Yafo, Israel",
     "destinationCode": "DXB",
     "destination": "Dubai, United Arab Emirates",
-    "terminal": "Dep: 3 - Arr: 1"
+    "terminal": "Dep: 3 - Arr: 1",
+    "price": "342"
   },
   {
     "id": "17",
@@ -184,7 +200,8 @@
     "origin": "Tel Aviv-Yafo, Israel",
     "destinationCode": "KBP",
     "destination": "Kiev, Ukraine",
-    "terminal": "Dep: 3 - Arr: D"
+    "terminal": "Dep: 3 - Arr: D",
+    "price": "342"
   },
   {
     "id": "18",
@@ -195,7 +212,8 @@
     "origin": "Tel Aviv-Yafo, Israel",
     "destinationCode": "MAD",
     "destination": "Madrid, Spain",
-    "terminal": "Dep: 3 - Arr: 4S"
+    "terminal": "Dep: 3 - Arr: 4S",
+    "price": "342"
   },
   {
     "id": "19",
@@ -206,7 +224,8 @@
     "origin": "Tel Aviv-Yafo, Israel",
     "destinationCode": "CDG",
     "destination": "Paris, France",
-    "terminal": "Dep: 3 - Arr: 2A"
+    "terminal": "Dep: 3 - Arr: 2A",
+    "price": "342"
   },
   {
     "id": "20",
@@ -216,7 +235,9 @@
     "originCode": "HKT",
     "origin": "Phuket, Thailand",
     "destinationCode": "BKK",
-    "destination": "Bangkok, Thailand"
+    "destination": "Bangkok, Thailand",
+    "terminal": "Dep: 3 - Arr: 1",
+    "price": "342"
   },
   {
     "id": "21",
@@ -227,7 +248,8 @@
     "origin": "Tel Aviv-Yafo, Israel",
     "destinationCode": "MXP",
     "destination": "Milan, Italy",
-    "terminal": "Dep: 3 - Arr: 1"
+    "terminal": "Dep: 3 - Arr: 1",
+    "price": "342"
   },
   {
     "id": "22",
@@ -238,7 +260,8 @@
     "origin": "Miami, United States",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: S - Arr: 3"
+    "terminal": "Dep: S - Arr: 3",
+    "price": "342"
   },
   {
     "id": "23",
@@ -249,7 +272,8 @@
     "origin": "New York, United States",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 4 - Arr: 3"
+    "terminal": "Dep: 4 - Arr: 3",
+    "price": "342"
   },
   {
     "id": "24",
@@ -260,7 +284,8 @@
     "origin": "Los Angeles, United States",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: TBIT - Arr: 3"
+    "terminal": "Dep: TBIT - Arr: 3",
+    "price": "342"
   },
   {
     "id": "25",
@@ -271,7 +296,8 @@
     "origin": "Toronto, Canada",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 3 - Arr: 3"
+    "terminal": "Dep: 3 - Arr: 3",
+    "price": "342"
   },
   {
     "id": "26",
@@ -282,7 +308,8 @@
     "origin": "London, United Kingdom",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 2 - Arr: 3"
+    "terminal": "Dep: 2 - Arr: 3",
+    "price": "342"
   },
   {
     "id": "27",
@@ -293,7 +320,8 @@
     "origin": "Bucharest, Romania",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "- Arr: 3"
+    "terminal": "- Arr: 3",
+    "price": "342"
   },
   {
     "id": "28",
@@ -304,7 +332,8 @@
     "origin": "Tel Aviv-Yafo, Israel",
     "destinationCode": "BRU",
     "destination": "Brussels, Belgium",
-    "terminal": "Dep: 3"
+    "terminal": "Dep: 3",
+    "price": "342"
   },
   {
     "id": "29",
@@ -315,7 +344,8 @@
     "origin": "Tel Aviv-Yafo, Israel",
     "destinationCode": "LHR",
     "destination": "London, United Kingdom",
-    "terminal": "Dep: 3 - Arr: 2"
+    "terminal": "Dep: 3 - Arr: 2",
+    "price": "342"
   },
   {
     "id": "30",
@@ -326,7 +356,8 @@
     "origin": "Frankfurt, Germany",
     "destinationCode": "DFW",
     "destination": "Dallas, United States",
-    "terminal": "Dep: 2 - Arr: D"
+    "terminal": "Dep: 2 - Arr: D",
+    "price": "342"
   },
   {
     "id": "31",
@@ -337,7 +368,8 @@
     "origin": "Larnaca, Cyprus",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 3 - Arr: 2"
+    "terminal": "Dep: 3 - Arr: 2",
+    "price": "342"
   },
   {
     "id": "32",
@@ -348,7 +380,8 @@
     "origin": "Athens, Greece",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 3 - Arr: 2"
+    "terminal": "Dep: 3 - Arr: 2",
+    "price": "342"
   },
   {
     "id": "33",
@@ -359,7 +392,8 @@
     "origin": "Lisbon, Portugal",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 1 - Arr: 3"
+    "terminal": "Dep: 1 - Arr: 3",
+    "price": "342"
   },
   {
     "id": "34",
@@ -370,7 +404,8 @@
     "origin": "Tbilisi, Georgia",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 3 - Arr: 2"
+    "terminal": "Dep: 3 - Arr: 2",
+    "price": "342"
   },
   {
     "id": "35",
@@ -381,7 +416,8 @@
     "origin": "Brussels, Belgium",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 3 - Arr: 2"
+    "terminal": "Dep: 3 - Arr: 2",
+    "price": "342"
   },
   {
     "id": "36",
@@ -392,6 +428,7 @@
     "origin": "Geneva, Switzerland",
     "destinationCode": "TLV",
     "destination": "Tel Aviv-Yafo, Israel",
-    "terminal": "Dep: 3 - Arr: 2"
+    "terminal": "Dep: 3 - Arr: 2",
+    "price": "342"
   }
 ]

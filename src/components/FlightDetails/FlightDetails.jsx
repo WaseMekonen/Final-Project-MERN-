@@ -25,7 +25,6 @@ function FlightDetails({ search }) {
           <div className={styles.searchInputs}>
             <DatePicker
               className={styles.departureInput}
-              placeholderText="Departure"
               dateFormat="dd/MM/yyyy"
               minDate={new Date()}
             ></DatePicker>
@@ -33,7 +32,6 @@ function FlightDetails({ search }) {
           <div className={styles.searchInputs}>
             <DatePicker
               className={styles.returnInput}
-              placeholderText="Return"
               dateFormat="dd/MM/yyyy"
               minDate={new Date()}
             ></DatePicker>

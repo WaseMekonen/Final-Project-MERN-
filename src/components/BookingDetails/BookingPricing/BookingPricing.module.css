@@ -2,32 +2,32 @@
   padding: 1rem;
   display: flex;
   width: 80%;
-  height: 92%;
+  height: 96%;
   background-color: whitesmoke;
   border-radius: 9px;
   flex-direction: column;
   border: 1px solid darkgray;
   margin-right: 2rem;
+  justify-content: space-around;
 }
 .alertMessage {
   width: 100%;
   height: 12%;
 }
-.priceTitle {
+.priceTitle{
   display: flex;
   width: 100%;
-  height: 9%;
-  /* background-color: gainsboro; */
+  height: 12%;
+  background-color: #369dc0;
   flex-direction: row;
-  align-items: center;
   border-bottom: 1px gray dotted;
+  align-items: center;
 }
 
 .details {
   display: flex;
   width: 100%;
   height: 19%;
-  /* background-color: gray; */
   flex-direction: row;
   justify-content: space-between;
 }
@@ -35,7 +35,6 @@
 .left {
   width: 34%;
   height: 100%;
-  /* background-color: aliceblue; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -45,7 +44,6 @@
 .right {
   width: 34%;
   height: 100%;
-  /* background-color: aliceblue; */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -56,9 +54,10 @@
   display: flex;
   width: 100%;
   height: 8%;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  align-content: space-around;
+  align-content: flex-end;
   border-top: 1px dotted gray;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

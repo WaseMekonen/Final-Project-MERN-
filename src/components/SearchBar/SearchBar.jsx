@@ -22,7 +22,7 @@ const SearchBar = ({
   const [destination, setDestination] = useState("");
   const [departureDate, setDepartureDate] = useState("");
   const [returnDate, setReturnDate] = useState("");
-  const [passengers, setPassengers] = useState("");
+  const [passengers, setPassengers] = useState(1);
   const [suggestionsOrigin, setSuggestionsOrigin] = useState([]);
   const [suggestionsDestination, setSuggestionsDestination] = useState([]);
 
@@ -66,17 +66,14 @@ const SearchBar = ({
       });
     }
     setSearch(userFlightSearch);
-    const test = (a, b) =>
+    const systemTickets = (a, b) =>
       flightsSchedule.filter(
         (flight) => flight.origin.includes(a) && flight.destination.includes(b)
       );
-    const systemOneWayTickets = test(origin, destination);
-    const systemRoundTripTickests = test(destination, origin);
+    const systemOneWayTickets = systemTickets(origin, destination);
+    const systemRoundTripTickests = systemTickets(destination, origin);
     setOneWayTickests(systemOneWayTickets);
     setRoundTripTickests(systemRoundTripTickests);
-
-    console.log({ systemOneWayTickets });
-    console.log({ systemRoundTripTickests });
   };
 
   const isValid =
