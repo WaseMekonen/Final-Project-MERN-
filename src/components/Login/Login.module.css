@@ -17,7 +17,7 @@
 }
 
 .right {
-  background-image: url(https://media.istockphoto.com/vectors/paper-layer-blue-abstract-background-use-for-banner-cover-poster-vector-id1189542390?k=20&m=1189542390&s=170667a&w=0&h=FeA2CVy0VLs8YC_EYb784TVe0jNGfoj-Lg7HBrP4pQ8=);
+  background-image: url(https://img4.goodfon.com/wallpaper/nbig/a/8b/vector-blue-squares-abstract-background-geometric.jpg);
   background-size: 100% 100%;
   width: 40%;
   height: 100%;
@@ -48,8 +48,6 @@
   margin: 7% 7% 6% 10%;
   width: 80%;
   height: 44px;
-  border-radius: 2px;
-  border-bottom: 2px solid #504f4f;
 }
 
 .loginBtnContainer {
@@ -64,11 +62,13 @@
   color: white;
   width: 70%;
   height: 44px;
+  border: none;
   border-radius: 10px;
   background-image: linear-gradient(338deg, #13a4bb 0%, #fffffd 100%);
   cursor: pointer;
   border-bottom: 2px solid #504f4f;
 }
+
 .haveAcount {
   margin-top: 19px;
   display: flex;
