@@ -1,29 +1,5 @@
 [
   {
-    "name": "Narita Intl",
-    "city": "Tokyo",
-    "country": "Japan",
-    "iata_code": "NRT",
-    "_geoloc": {
-      "lat": 35.764722,
-      "lng": 140.386389
-    },
-    "links_count": 575,
-    "objectID": "2279"
-  },
-  {
-    "name": "Capital Intl",
-    "city": "Beijing",
-    "country": "China",
-    "iata_code": "PEK",
-    "_geoloc": {
-      "lat": 40.080111,
-      "lng": 116.584556
-    },
-    "links_count": 1069,
-    "objectID": "3364"
-  },
-  {
     "name": "Pudong",
     "city": "Shanghai",
     "country": "China",
@@ -34,6 +10,18 @@
     },
     "links_count": 825,
     "objectID": "3406"
+  },
+  {
+    "name": "Lisboa",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "iata_code": "LIS",
+    "_geoloc": {
+      "lat": 38.781311,
+      "lng": -9.135919
+    },
+    "links_count": 435,
+    "objectID": "1638"
   },
   {
     "name": "Hong Kong Intl",
@@ -70,18 +58,6 @@
     },
     "links_count": 138,
     "objectID": "3179"
-  },
-  {
-    "name": "Chhatrapati Shivaji Intl",
-    "city": "Mumbai",
-    "country": "India",
-    "iata_code": "BOM",
-    "_geoloc": {
-      "lat": 19.088686,
-      "lng": 72.867919
-    },
-    "links_count": 452,
-    "objectID": "2997"
   },
   {
     "name": "Dubai Intl",
@@ -180,18 +156,6 @@
     "objectID": "2939"
   },
   {
-    "name": "Okecie",
-    "city": "Warsaw",
-    "country": "Poland",
-    "iata_code": "WAW",
-    "_geoloc": {
-      "lat": 52.16575,
-      "lng": 20.967122
-    },
-    "links_count": 240,
-    "objectID": "679"
-  },
-  {
     "name": "Ferihegy",
     "city": "Budapest",
     "country": "Hungary",
@@ -240,42 +204,6 @@
     "objectID": "351"
   },
   {
-    "name": "Franz Josef Strauss",
-    "city": "Munich",
-    "country": "Germany",
-    "iata_code": "MUC",
-    "_geoloc": {
-      "lat": 48.353783,
-      "lng": 11.786086
-    },
-    "links_count": 728,
-    "objectID": "346"
-  },
-  {
-    "name": "Frankfurt Main",
-    "city": "Frankfurt",
-    "country": "Germany",
-    "iata_code": "FRA",
-    "_geoloc": {
-      "lat": 50.026421,
-      "lng": 8.543125
-    },
-    "links_count": 990,
-    "objectID": "340"
-  },
-  {
-    "name": "Venezia Tessera",
-    "city": "Venice",
-    "country": "Italy",
-    "iata_code": "VCE",
-    "_geoloc": {
-      "lat": 45.505278,
-      "lng": 12.351944
-    },
-    "links_count": 245,
-    "objectID": "1551"
-  },
-  {
     "name": "Fiumicino",
     "city": "Rome",
     "country": "Italy",
@@ -322,18 +250,6 @@
     },
     "links_count": 386,
     "objectID": "1524"
-  },
-  {
-    "name": "Provence",
-    "city": "Marseille",
-    "country": "France",
-    "iata_code": "MRS",
-    "_geoloc": {
-      "lat": 43.435555,
-      "lng": 5.213611
-    },
-    "links_count": 265,
-    "objectID": "1353"
   },
   {
     "name": "Charles De Gaulle",
@@ -420,18 +336,6 @@
     "objectID": "507"
   },
   {
-    "name": "Mohammed V Intl",
-    "city": "Casablanca",
-    "country": "Morocco",
-    "iata_code": "CMN",
-    "_geoloc": {
-      "lat": 33.367467,
-      "lng": -7.589967
-    },
-    "links_count": 250,
-    "objectID": "1074"
-  },
-  {
     "name": "Menara",
     "city": "Marrakech",
     "country": "Morocco",
@@ -444,18 +348,6 @@
     "objectID": "1075"
   },
   {
-    "name": "Dublin",
-    "city": "Dublin",
-    "country": "Ireland",
-    "iata_code": "DUB",
-    "_geoloc": {
-      "lat": 53.421333,
-      "lng": -6.270075
-    },
-    "links_count": 414,
-    "objectID": "599"
-  },
-  {
     "name": "John F Kennedy Intl",
     "city": "New York",
     "country": "United States",
@@ -466,18 +358,6 @@
     },
     "links_count": 911,
     "objectID": "3797"
-  },
-  {
-    "name": "General Edward Lawrence Logan Intl",
-    "city": "Boston",
-    "country": "United States",
-    "iata_code": "BOS",
-    "_geoloc": {
-      "lat": 42.364347,
-      "lng": -71.005181
-    },
-    "links_count": 424,
-    "objectID": "3448"
   },
   {
     "name": "Miami Intl",
@@ -502,42 +382,6 @@
     },
     "links_count": 636,
     "objectID": "193"
-  },
-  {
-    "name": "Chicago Ohare Intl",
-    "city": "Chicago",
-    "country": "United States",
-    "iata_code": "ORD",
-    "_geoloc": {
-      "lat": 41.978603,
-      "lng": -87.904842
-    },
-    "links_count": 1108,
-    "objectID": "3830"
-  },
-  {
-    "name": "Mc Carran Intl",
-    "city": "Las Vegas",
-    "country": "United States",
-    "iata_code": "LAS",
-    "_geoloc": {
-      "lat": 36.080056,
-      "lng": -115.15225
-    },
-    "links_count": 498,
-    "objectID": "3877"
-  },
-  {
-    "name": "San Francisco Intl",
-    "city": "San Francisco",
-    "country": "United States",
-    "iata_code": "SFO",
-    "_geoloc": {
-      "lat": 37.618972,
-      "lng": -122.374889
-    },
-    "links_count": 499,
-    "objectID": "3469"
   },
   {
     "name": "Los Angeles Intl",
@@ -598,17 +442,5 @@
     },
     "links_count": 903,
     "objectID": "580"
-  },
-  {
-    "name": "Cote D'Azur",
-    "city": "Nice",
-    "country": "France",
-    "iata_code": "NCE",
-    "_geoloc": {
-      "lat": 43.658411,
-      "lng": 7.215872
-    },
-    "links_count": 269,
-    "objectID": "1354"
   }
 ]
