@@ -1,4 +1,5 @@
 .header {
+  display: flex;
   height: 400px;
   width: 100vw;
   background-image: url(https://media-exp1.licdn.com/dms/image/C561BAQFOGM8S6gp06w/company-background_10000/0/1638096506282?e=2159024400&v=beta&t=IAyIF6emIIJ1CzM85Gi_RWwyYubPKYQ27NoaQNcHg3g);
@@ -8,15 +9,11 @@
   background-size: 100% 82%;
 }
 .bookingContainer {
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  display: flex;
   width: 78vw;
   position: relative;
   height: 196px;
   top: 280px;
-  left: 11%;
   border-radius: 12px;
   background-color: #ffffffec;
   box-shadow: 5px 6px 12px #3c3a3a;
@@ -37,7 +34,7 @@
   flex-wrap: wrap;
 }
 
-.destinationImagesContainer{
+.destinationImagesContainer {
   display: flex;
   width: 93%;
   height: 100%;
