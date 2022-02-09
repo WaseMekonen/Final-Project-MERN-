@@ -1,4 +1,4 @@
-.loginContainer {
+.loginContainer{
   filter: drop-shadow(2px 4px 6px gray);
   display: flex;
   width: 39rem;
@@ -6,7 +6,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid;
   margin-left: 16rem;
 }
 .left {

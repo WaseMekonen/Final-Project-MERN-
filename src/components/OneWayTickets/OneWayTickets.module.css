@@ -1,12 +1,11 @@
-.OneWayticket {
+.OneWayticket{
   display: flex;
   flex-wrap: wrap;
-  height: 16%;
+  height: 22%;
   width: 98%;
-  padding: 1%;
   background-color: #ffffff;
   margin-top: 1%;
-  border-radius: 2px;
+  border-radius: 3px;
   flex-direction: column;
   justify-content: space-around;
   align-content: space-between;

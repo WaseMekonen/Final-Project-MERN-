@@ -16,12 +16,17 @@ const reducer = (state, action) => {
     case actions.SET_SEARCH_INPUTS:
       return {
         ...state,
-        searchInputs: action.payload,
+        searchInputs: { ...state.searchInputs, ...action.payload },
       };
-    case actions.SET_TICKETS:
+    case actions.SET_ONE_WAY_TICKETS:
       return {
         ...state,
-        tickets: action.payload,
+        oneWayTickets: action.payload,
+      };
+    case actions.SET_ROUND_TRIP_TICKETS:
+      return {
+        ...state,
+        roundTripTickets: action.payload,
       };
     default:
       return state;

@@ -81,13 +81,13 @@
 }
 .suggestionorigin,
 .suggestiondestination {
-  background-color: #efefef;
+  position: relative;
   width: 106%;
   cursor: pointer;
   border-right: 1px solid black;
   border-left: 1px solid black;
   border-bottom: 1px solid black;
-  height: 18%;
+  height: 41%;
   overflow: auto;
   border: antiquewhite;
 }

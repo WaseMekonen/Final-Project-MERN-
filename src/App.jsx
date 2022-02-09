@@ -12,12 +12,11 @@ import styles from "./App.module.css";
 
 const App = () => {
   const [auth, setAuth] = useState(null);
-  const [oneWayTickests, setOneWayTickests] = useState([]);
-  const [roundTripTickests, setRoundTripTickests] = useState([]);
-  const [search, setSearch] = useState([]);
   const [radio, setRadio] = useState("roundTrip");
-  const [bookingResult, setBookingResult] = useState([]);
-
+  const [userSelectionForRoundTrip, setUserSelectionForRoundTrip] = useState(
+    []
+  );
+  const [userSelectionForOneWay, setUserSelectionForOneWay] = useState([]);
 
   return (
     <ProviderWrapper>
@@ -28,22 +27,18 @@ const App = () => {
             <Route
               exact
               path="/"
-              component={() => (
-                <Home
-                  setOneWayTickests={setOneWayTickests}
-                  setRoundTripTickests={setRoundTripTickests}
-                  setSearch={setSearch}
-                  radio={radio}
-                  setRadio={setRadio}
-                />
-              )}
+              component={() => <Home radio={radio} setRadio={setRadio} />}
             />
             <Route exact path="/about" />
             <Route
               exact
               path="/booking"
               component={() => (
-                <Booking setAuth={setAuth} bookingResult={bookingResult} />
+                <Booking
+                  setAuth={setAuth}
+                  userSelectionForRoundTrip={userSelectionForRoundTrip}
+                  userSelectionForOneWay={userSelectionForOneWay}
+                />
               )}
             />
             <Route
@@ -51,11 +46,9 @@ const App = () => {
               path="/flightsResult"
               component={() => (
                 <FlightsResult
-                  oneWayTickests={oneWayTickests}
-                  search={search}
-                  roundTripTickests={roundTripTickests}
                   radio={radio}
-                  setBookingResult={setBookingResult}
+                  setUserSelectionForRoundTrip={setUserSelectionForRoundTrip}
+                  setUserSelectionForOneWay={setUserSelectionForOneWay}
                 />
               )}
             />

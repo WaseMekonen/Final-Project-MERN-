@@ -19,9 +19,10 @@
 .resultsForOneWay {
   display: flex;
   width: 62%;
-  height: auto;
+  height: 59%;
   flex-direction: column;
   margin-top: 3rem;
+  overflow-y: scroll;
 }
 
 .footer {

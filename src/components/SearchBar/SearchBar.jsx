@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+// import { parseISO, format } from "date-fns";
 import { AppContext } from "../ProviderWrapper/ProviderWrapper";
 import FlightType from "../FlightType/FlightType";
 import { Link } from "react-router-dom";
@@ -8,24 +9,18 @@ import "react-datepicker/dist/react-datepicker.css";
 import styles from "./SearchBar.module.css";
 
 const airportUrl = "/data/elalRouts.json";
-const flightUrl = "/data/flightsSchedule.json";
+const flightUrl = "/data/flightsWeekOne.json";
 
-const SearchBar = ({
-  setOneWayTickests,
-  setRoundTripTickests,
-  setSearch,
-  radio,
-  setRadio,
-}) => {
-  const { searchResult } = useContext(AppContext);
+const SearchBar = ({ radio, setRadio }) => {
+  const {
+    searchInputs,
+    setSearchInputs,
+    setOneWayTickets,
+    setRoundTripTickets,
+  } = useContext(AppContext);
 
   const [airports, setAirports] = useState([]);
-  const [flightsSchedule, setFlighSchedule] = useState([]);
-  const [origin, setOrigin] = useState("");
-  const [destination, setDestination] = useState("");
-  const [departureDate, setDepartureDate] = useState("");
-  const [returnDate, setReturnDate] = useState("");
-  const [passengers, setPassengers] = useState(1);
+  const [flightsSchedule, setFlightSchedule] = useState([]);
   const [suggestionsOrigin, setSuggestionsOrigin] = useState([]);
   const [suggestionsDestination, setSuggestionsDestination] = useState([]);
 
@@ -34,59 +29,49 @@ const SearchBar = ({
   }, []);
 
   useEffect(() => {
-    getData(flightUrl, setFlighSchedule);
+    getData(flightUrl, setFlightSchedule);
   }, []);
 
-  const onChangHandler = (text, setValue, setSuggestions) => {
-    let matches = [];
-    if (text.length > 0) {
-      matches = airports.filter((airport) => {
+  const setSuggestionsWrapper = (text, setSuggestions) => {
+    const matches =
+      text.length > 0 &&
+      airports.filter((airport) => {
         const regex = new RegExp(`${text}`, "gi");
         return airport.city.match(regex);
       });
-    }
-    setSuggestions(matches);
-    setValue(text);
+    setSuggestions(matches || []);
   };
 
-  const onSuggestHandler = (text, setText, setState) => {
-    setText(text);
-    setState([]);
-  };
-
-  const searchedFlight = () => {
-    let userFlightSearch = [];
-    if (origin === destination) {
+  const searchFlight = () => {
+    if (searchInputs.origin === searchInputs.destination) {
       alert("You cant choose the same city");
       return;
-    } else {
-      userFlightSearch.push({
-        origin: origin,
-        destination: destination,
-        departure: departureDate,
-        return: returnDate,
-        passengers: passengers,
-      });
     }
-    setSearch(userFlightSearch);
-
-    console.log(searchResult);
-
     const systemTickets = (a, b) =>
-      flightsSchedule.filter(
-        (flight) => flight.origin.includes(a) && flight.destination.includes(b)
-      );
-    const systemOneWayTickets = systemTickets(origin, destination);
-    const systemRoundTripTickests = systemTickets(destination, origin);
-    setOneWayTickests(systemOneWayTickets);
-    setRoundTripTickests(systemRoundTripTickests);
+      flightsSchedule.filter((flight) => {
+        return (
+          flight.origin.toLowerCase() === b.toLowerCase() &&
+          flight.destination.toLowerCase() === a.toLowerCase()
+        );
+      });
+
+    const systemOneWayTickets = systemTickets(
+      searchInputs.origin,
+      searchInputs.destination
+    );
+    const systemRoundTripTickets = systemTickets(
+      searchInputs.destination,
+      searchInputs.origin
+    );
+    setOneWayTickets(systemOneWayTickets);
+    setRoundTripTickets(systemRoundTripTickets);
   };
 
   const isValid =
-    origin !== "" &&
-    destination !== "" &&
-    departureDate !== "" &&
-    (returnDate !== "" || radio === "oneWay");
+    searchInputs.origin !== "" &&
+    searchInputs.destination !== "" &&
+    searchInputs.departureDate !== "" &&
+    (searchInputs.returnDate !== "" || radio === "oneWay");
 
   return (
     <>
@@ -102,10 +87,11 @@ const SearchBar = ({
             <input
               type="text"
               placeholder="Origin "
-              onChange={(e) =>
-                onChangHandler(e.target.value, setOrigin, setSuggestionsOrigin)
-              }
-              value={origin}
+              onChange={(e) => {
+                setSuggestionsWrapper(e.target.value, setSuggestionsOrigin);
+                setSearchInputs({ origin: e.target.value });
+              }}
+              value={searchInputs.origin}
             />
             {suggestionsOrigin.length > 0 ? (
               <div className={styles.suggestionorigin}>
@@ -114,13 +100,10 @@ const SearchBar = ({
                     return (
                       <div
                         key={i}
-                        onClick={() =>
-                          onSuggestHandler(
-                            suggestion.city,
-                            setOrigin,
-                            setSuggestionsOrigin
-                          )
-                        }
+                        onClick={(e) => {
+                          setSuggestionsWrapper([], setSuggestionsOrigin);
+                          setSearchInputs({ origin: e.target.innerHTML });
+                        }}
                       >
                         {suggestion.city}
                       </div>
@@ -135,14 +118,14 @@ const SearchBar = ({
             <input
               type="text"
               placeholder="Destination "
-              onChange={(e) =>
-                onChangHandler(
+              onChange={(e) => {
+                setSuggestionsWrapper(
                   e.target.value,
-                  setDestination,
                   setSuggestionsDestination
-                )
-              }
-              value={destination}
+                );
+                setSearchInputs({ destination: e.target.value });
+              }}
+              value={searchInputs.destination}
             />
             {suggestionsDestination.length > 0 ? (
               <div className={styles.suggestiondestination}>
@@ -151,13 +134,10 @@ const SearchBar = ({
                     return (
                       <div
                         key={i}
-                        onClick={() =>
-                          onSuggestHandler(
-                            suggestion.city,
-                            setDestination,
-                            setSuggestionsDestination
-                          )
-                        }
+                        onClick={(e) => {
+                          setSearchInputs({ destination: e.target.innerHTML });
+                          setSuggestionsWrapper([], setSuggestionsDestination);
+                        }}
                       >
                         {suggestion.city}
                       </div>
@@ -168,47 +148,41 @@ const SearchBar = ({
               ""
             )}
           </div>
-          {radio == "roundTrip" ? (
-            <>
-              <div className={styles.formInputs}>
-                <DatePicker
-                  placeholderText="Departure"
-                  selected={departureDate}
-                  onChange={(Date) => setDepartureDate(Date)}
-                  dateFormat="dd/MM/yyyy"
-                  minDate={new Date()}
-                  maxDate={returnDate}
-                ></DatePicker>
-              </div>
-              <div className={styles.formInputs}>
-                <DatePicker
-                  placeholderText="Return"
-                  selected={returnDate}
-                  onChange={(Date) => setReturnDate(Date)}
-                  dateFormat="dd/MM/yyyy"
-                  minDate={departureDate ? departureDate : new Date()}
-                ></DatePicker>
-              </div>
-            </>
-          ) : (
+
+          <>
             <div className={styles.formInputs}>
               <DatePicker
                 placeholderText="Departure"
-                selected={departureDate}
-                onChange={(Date) => setDepartureDate(Date)}
+                selected={searchInputs.departureDate}
+                onChange={(date) => setSearchInputs({ departureDate: date })}
                 dateFormat="dd/MM/yyyy"
                 minDate={new Date()}
-                maxDate={returnDate}
+                maxDate={searchInputs.returnDate}
               ></DatePicker>
             </div>
-          )}
+            {radio === "roundTrip" && (
+              <div className={styles.formInputs}>
+                <DatePicker
+                  placeholderText="Return"
+                  selected={searchInputs.returnDate}
+                  onChange={(date) => setSearchInputs({ returnDate: date })}
+                  dateFormat="dd/MM/yyyy"
+                  minDate={
+                    searchInputs.departureDate !== ""
+                      ? searchInputs.departureDate
+                      : new Date()
+                  }
+                ></DatePicker>
+              </div>
+            )}
+          </>
           <div className={styles.formInputs}>
             <input
               placeholder="Passengers"
               type="number"
-              value={passengers ? passengers : 1}
+              value={searchInputs.passengers}
               min={1}
-              onChange={(e) => setPassengers(e.target.value)}
+              onChange={(e) => setSearchInputs({ passengers: e.target.value })}
             />
           </div>
           <div
@@ -221,7 +195,7 @@ const SearchBar = ({
             <Link
               to="/flightsResult"
               className={isValid ? styles.buttonActive : styles.buttonDisable}
-              onClick={searchedFlight}
+              onClick={searchFlight}
             >
               Search Flight
             </Link>

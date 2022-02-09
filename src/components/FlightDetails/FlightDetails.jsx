@@ -1,25 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../ProviderWrapper/ProviderWrapper";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./FlightDetails.module.css";
 
-function FlightDetails({ search }) {
+function FlightDetails() {
+  const { searchInputs } = useContext(AppContext);
+
   return (
     <>
-      {search && (
-        <form className={styles.userSearch} key={search.origin}>
+      {searchInputs && (
+        <form className={styles.userSearch} key={searchInputs.origin}>
           <div className={styles.searchInputs}>
             <input
               className={styles.FromInput}
               type="text"
-              placeholderText="Origin"
+              placeholder="Origin"
             />
           </div>
           <div className={styles.searchInputs}>
             <input
               type="text"
               className={styles.ToInput}
-              placeholderText="Destanition"
+              placeholder="Destination"
             />
           </div>
           <div className={styles.searchInputs}>
@@ -27,6 +30,7 @@ function FlightDetails({ search }) {
               className={styles.departureInput}
               dateFormat="dd/MM/yyyy"
               minDate={new Date()}
+              placeholderText="Departure"
             ></DatePicker>
           </div>
           <div className={styles.searchInputs}>
@@ -34,6 +38,7 @@ function FlightDetails({ search }) {
               className={styles.returnInput}
               dateFormat="dd/MM/yyyy"
               minDate={new Date()}
+              placeholderText="Return"
             ></DatePicker>
           </div>
           <div className={styles.searchInputs}>

@@ -1,12 +1,11 @@
 .destanation {
   position: relative;
   display: flex;
-  width: 30%;
-  height: 42%;
+  width: 27%;
+  height: 35%;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  z-index: 1;
 }
 .destanation img {
   position: absolute;
@@ -35,7 +34,8 @@
 }
 .destanationRight {
   display: flex;
-  align-items: center;
   width: 50%;
+  align-items: center;
+  flex-direction: column;
   justify-content: center;
 }

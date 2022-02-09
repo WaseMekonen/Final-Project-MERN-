@@ -1,11 +1,15 @@
 export default {
   auth: null,
-  tickets: { origin: null, destenation: null },
+  oneWayTickets: [],
+  roundTripTickets: [],
+  // oneWayTickets: { origin: null, destination: null },
+  // roundTripTickets: { origin: null, destination: null },
   searchInputs: {
-    destenation: "",
+    destination: "",
     origin: "",
     returnDate: "",
-    detartureDate: "",
+    departureDate: "",
+    passengers: 1,
   },
   searchResult: [],
 };

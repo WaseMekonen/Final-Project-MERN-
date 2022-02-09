@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AppContext } from "../ProviderWrapper/ProviderWrapper";
+
 import styles from "./OneWayTickets.module.css";
 
-function OneWayTickets({ oneWayTickests }) {
-  const oneWayElements = oneWayTickests
-    ? oneWayTickests.map((ticket, i) => (
+function OneWayTickets({ setUserSelectionForOneWay }) {
+  const { oneWayTickets } = useContext(AppContext);
+
+  const passTicketToBooking = (oneWayTicketId) => {
+    const arr = [];
+    const foundOneWayTicket = oneWayTickets.find((ticket) => {
+      return oneWayTicketId === ticket.id;
+    });
+    arr.push(foundOneWayTicket);
+    setUserSelectionForOneWay(arr);
+  };
+
+  const oneWayElements = oneWayTickets
+    ? oneWayTickets.map((ticket, i) => (
         <div className={styles.OneWayticket} key={i}>
           <section className={styles.OneWayflightDetails}>
             <div className={styles.OneWayticketOne}>
@@ -21,7 +35,7 @@ function OneWayTickets({ oneWayTickests }) {
               </div>
               <div className="total">
                 <h4>{ticket.terminal}</h4>
-                <h4>06h 00m</h4>
+                <h4>{ticket.FlightDuration}</h4>
               </div>
             </div>
           </section>
@@ -33,7 +47,14 @@ function OneWayTickets({ oneWayTickests }) {
               <span>400$</span>
             </div>
             <div className="button">
-              <button>Book</button>
+              <Link
+                to="/booking"
+                onClick={() => {
+                  passTicketToBooking(ticket.id);
+                }}
+              >
+                Select
+              </Link>
             </div>
           </section>
         </div>

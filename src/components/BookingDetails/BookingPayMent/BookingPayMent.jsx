@@ -16,6 +16,7 @@ export default function BookingPayMent() {
             <div className={styles.ExpirationDate}>
               <input
                 type="number"
+                
                 className={styles.payMentDetailsCardExpirationMonth}
               />
               <input

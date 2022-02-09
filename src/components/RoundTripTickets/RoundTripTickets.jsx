@@ -1,31 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AppContext } from "../ProviderWrapper/ProviderWrapper";
+
 import styles from "./RoundTripTickets.module.css";
+const RoundTripTickets = ({ setUserSelectionForRoundTrip }) => {
+  const { oneWayTickets, roundTripTickets } = useContext(AppContext);
 
-// import { Redirect } from "react-router-dom";
-// import { useState } from "react";
-
-const RoundTripTickets = ({
-  roundTripTickests,
-  oneWayTickests,
-  setBookingResult,
-  search,
-}) => {
   const passTicketToBooking = (oneWayTicketId, roundTripTicketId) => {
     const roundTripTicketForBooking = [];
-    const foundOneWayTicket = oneWayTickests.find((ticket) => {
+    const foundOneWayTicket = oneWayTickets.find((ticket) => {
       return oneWayTicketId === ticket.id;
     });
-    const foundRoundTripTicket = roundTripTickests.find((ticket) => {
+    const foundRoundTripTicket = roundTripTickets.find((ticket) => {
       return roundTripTicketId === ticket.id;
     });
     roundTripTicketForBooking.push(foundOneWayTicket);
     roundTripTicketForBooking.push(foundRoundTripTicket);
-    setBookingResult(roundTripTicketForBooking);
+    setUserSelectionForRoundTrip(roundTripTicketForBooking);
   };
 
-  const roundTripElements = oneWayTickests
-    ? oneWayTickests.map((ticket, i) => {
-        const secondTicket = Object.values(roundTripTickests);
+  const roundTripElements = oneWayTickets
+    ? oneWayTickets.map((ticket, i) => {
+        const secondTicket = Object.values(roundTripTickets);
         return (
           <>
             <div className={styles.roudTripticket} key={ticket.id}>
@@ -84,14 +80,21 @@ const RoundTripTickets = ({
                   <span>{"$" + ticket.price * 3}</span>
                 </div>
                 <div className="button">
-                  <button
+                  {/* <button
                     onClick={() => {
                       passTicketToBooking(ticket.id, secondTicket[i].id);
-                      
                     }}
                   >
                     Book
-                  </button>
+                  </button> */}
+                  <Link
+                    to="/booking"
+                    onClick={() => {
+                      passTicketToBooking(ticket.id, secondTicket[i].id);
+                    }}
+                  >
+                    Select
+                  </Link>
                 </div>
               </section>
             </div>

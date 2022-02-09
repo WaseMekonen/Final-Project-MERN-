@@ -7,7 +7,7 @@ import BookingTravelDetails from "../../components/BookingDetails/BookingTravelD
 
 import styles from "./Booking.module.css";
 
-const Booking = ({ bookingResult }) => {
+const Booking = ({ userSelectionForRoundTrip, userSelectionForOneWay }) => {
   return (
     <div className={styles.bookingContainer}>
       <section className={styles.ticketingProcess}>
@@ -15,7 +15,10 @@ const Booking = ({ bookingResult }) => {
       </section>
       <section className={styles.totalDetails}>
         <article className={styles.flightDetails}>
-          <BookingTicket bookingResult={bookingResult} />
+          <BookingTicket
+            userSelectionForRoundTrip={userSelectionForRoundTrip}
+            userSelectionForOneWay={userSelectionForOneWay}
+          />
           {/* <BookingPayMent /> */}
           <div className={styles.travelerDetails}>
             <div className={styles.travelerDetailsHeading}>

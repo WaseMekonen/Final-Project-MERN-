@@ -10,8 +10,11 @@ const ProviderWrapper = ({ children }) => {
 
   const value = {
     ...state,
-    setTickes: (payload) => {
-      dispatch({ type: actions.SET_TICKETS, payload });
+    setOneWayTickets: (payload) => {
+      dispatch({ type: actions.SET_ONE_WAY_TICKETS, payload });
+    },
+    setRoundTripTickets: (payload) => {
+      dispatch({ type: actions.SET_ROUND_TRIP_TICKETS, payload });
     },
     setAuth: (payload) => {
       dispatch({ type: actions.SET_AUTH, payload });
