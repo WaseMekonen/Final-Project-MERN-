@@ -10,6 +10,9 @@ const ProviderWrapper = ({ children }) => {
 
   const value = {
     ...state,
+    setRadio: (payload) => {
+      dispatch({ type: actions.SET_RADIO, payload });
+    },
     setOneWayTickets: (payload) => {
       dispatch({ type: actions.SET_ONE_WAY_TICKETS, payload });
     },

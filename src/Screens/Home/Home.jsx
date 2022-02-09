@@ -7,7 +7,7 @@ const Home = ({ radio, setRadio }) => {
   return (
     <div>
       <header className={styles.header}>
-        <SearchBar radio={radio} setRadio={setRadio} />
+        <SearchBar />
       </header>
       <main className={styles.main}>
         <div className={styles.destinationImagesContainer}>

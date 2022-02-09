@@ -8,12 +8,12 @@ function OneWayTickets({ setUserSelectionForOneWay }) {
   const { oneWayTickets } = useContext(AppContext);
 
   const passTicketToBooking = (oneWayTicketId) => {
-    const arr = [];
+    const oneWayTicketForBooking = [];
     const foundOneWayTicket = oneWayTickets.find((ticket) => {
       return oneWayTicketId === ticket.id;
     });
-    arr.push(foundOneWayTicket);
-    setUserSelectionForOneWay(arr);
+    oneWayTicketForBooking.push(foundOneWayTicket);
+    setUserSelectionForOneWay(oneWayTicketForBooking);
   };
 
   const oneWayElements = oneWayTickets

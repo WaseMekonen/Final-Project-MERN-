@@ -12,7 +12,7 @@ import styles from "./App.module.css";
 
 const App = () => {
   const [auth, setAuth] = useState(null);
-  const [radio, setRadio] = useState("roundTrip");
+  // const [radio, setRadio] = useState("roundTrip");
   const [userSelectionForRoundTrip, setUserSelectionForRoundTrip] = useState(
     []
   );
@@ -24,11 +24,7 @@ const App = () => {
         <div className={styles.app}>
           <Navbar />
           <Switch>
-            <Route
-              exact
-              path="/"
-              component={() => <Home radio={radio} setRadio={setRadio} />}
-            />
+            <Route exact path="/" component={() => <Home />} />
             <Route exact path="/about" />
             <Route
               exact
@@ -46,7 +42,6 @@ const App = () => {
               path="/flightsResult"
               component={() => (
                 <FlightsResult
-                  radio={radio}
                   setUserSelectionForRoundTrip={setUserSelectionForRoundTrip}
                   setUserSelectionForOneWay={setUserSelectionForOneWay}
                 />

@@ -1,8 +1,12 @@
 import actions from "./actions";
 
 const reducer = (state, action) => {
-  console.log(action);
   switch (action.type) {
+    case actions.SET_RADIO:
+      return {
+        ...state,
+        radio: action.payload,
+      };
     case actions.SET_AUTH:
       return {
         ...state,

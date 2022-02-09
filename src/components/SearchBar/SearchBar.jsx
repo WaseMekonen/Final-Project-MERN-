@@ -11,8 +11,10 @@ import styles from "./SearchBar.module.css";
 const airportUrl = "/data/elalRouts.json";
 const flightUrl = "/data/flightsWeekOne.json";
 
-const SearchBar = ({ radio, setRadio }) => {
+const SearchBar = () => {
   const {
+    setRadio,
+    radio,
     searchInputs,
     setSearchInputs,
     setOneWayTickets,
@@ -44,7 +46,7 @@ const SearchBar = ({ radio, setRadio }) => {
 
   const searchFlight = () => {
     if (searchInputs.origin === searchInputs.destination) {
-      alert("You cant choose the same city");
+      alert("You can't choose the same city");
       return;
     }
     const systemTickets = (a, b) =>

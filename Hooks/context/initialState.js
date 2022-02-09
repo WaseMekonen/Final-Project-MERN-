@@ -1,5 +1,6 @@
 export default {
   auth: null,
+  radio:"roundTrip",
   oneWayTickets: [],
   roundTripTickets: [],
   // oneWayTickets: { origin: null, destination: null },

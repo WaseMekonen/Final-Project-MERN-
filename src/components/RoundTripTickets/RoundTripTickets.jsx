@@ -19,9 +19,9 @@ const RoundTripTickets = ({ setUserSelectionForRoundTrip }) => {
     setUserSelectionForRoundTrip(roundTripTicketForBooking);
   };
 
+  const secondTicket = Object.values(roundTripTickets);
   const roundTripElements = oneWayTickets
     ? oneWayTickets.map((ticket, i) => {
-        const secondTicket = Object.values(roundTripTickets);
         return (
           <>
             <div className={styles.roudTripticket} key={ticket.id}>
@@ -80,13 +80,6 @@ const RoundTripTickets = ({ setUserSelectionForRoundTrip }) => {
                   <span>{"$" + ticket.price * 3}</span>
                 </div>
                 <div className="button">
-                  {/* <button
-                    onClick={() => {
-                      passTicketToBooking(ticket.id, secondTicket[i].id);
-                    }}
-                  >
-                    Book
-                  </button> */}
                   <Link
                     to="/booking"
                     onClick={() => {

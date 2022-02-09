@@ -5,7 +5,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import styles from "./FlightDetails.module.css";
 
 function FlightDetails() {
-  const { searchInputs } = useContext(AppContext);
+  const { searchInputs, radio } = useContext(AppContext);
 
   return (
     <>
