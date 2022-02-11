@@ -3,7 +3,7 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import destinationData from "../../Utils/destanationData.json";
 import styles from "./Home.module.css";
 
-const Home = ({ radio, setRadio }) => {
+const Home = () => {
   return (
     <div>
       <header className={styles.header}>

@@ -8,6 +8,7 @@ function BookingTravelDetails() {
     dateOfBirth: "",
     gender: "",
   });
+  const [error, setError] = useState("");
 
   return (
     <>

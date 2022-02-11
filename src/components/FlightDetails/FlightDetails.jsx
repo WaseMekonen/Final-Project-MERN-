@@ -3,19 +3,31 @@ import { AppContext } from "../ProviderWrapper/ProviderWrapper";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./FlightDetails.module.css";
+import FlightType from "../FlightType/FlightType";
 
 function FlightDetails() {
-  const { searchInputs, radio } = useContext(AppContext);
+  const { searchInputs, setSearchInputs } = useContext(AppContext);
 
   return (
     <>
       {searchInputs && (
-        <form className={styles.userSearch} key={searchInputs.origin}>
+        <form
+          className={styles.userSearch}
+          key={searchInputs.origin}
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <FlightType className={styles.flightResultsRadio} />
           <div className={styles.searchInputs}>
             <input
               className={styles.FromInput}
+              value={searchInputs.origin}
               type="text"
               placeholder="Origin"
+              onInput={(e) => {
+                setSearchInputs({ origin: e.target.value });
+              }}
             />
           </div>
           <div className={styles.searchInputs}>

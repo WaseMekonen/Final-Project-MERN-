@@ -13,7 +13,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const { setAuth, auth } = useContext(AppContext);
-  console.log("auth: ", auth);
+
   const signIn = () => {
     axios
       .post(URL, {
@@ -21,15 +21,13 @@ function Login() {
         password,
       })
       .then((response) => {
-        () => {
-          setAuth(true);
-          console.log(response.data);
-        };
+        setAuth(response.data);
+        console.log(response.data);
+        localStorage.setItem("auth", JSON.stringify(response.data));
       })
       .catch((err) => {
         console.error(err);
-        setAuth(true);
-        setError(error);
+        setError(err.response.data.error.message);
       });
   };
 

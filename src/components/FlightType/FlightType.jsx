@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../ProviderWrapper/ProviderWrapper";
 import styles from "./FlightType.module.css";
 
-function FlightType({ setRadio, radio }) {
+function FlightType() {
+  const { setRadio, radio } = useContext(AppContext);
   return (
     <div>
       <div className={styles.flightType}>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-// import { parseISO, format } from "date-fns";
+import moment from "moment";
 import { AppContext } from "../ProviderWrapper/ProviderWrapper";
 import FlightType from "../FlightType/FlightType";
 import { Link } from "react-router-dom";
@@ -34,6 +34,8 @@ const SearchBar = () => {
     getData(flightUrl, setFlightSchedule);
   }, []);
 
+  const handleChange = (date) => setSearchInputs({ departureDate: date });
+
   const setSuggestionsWrapper = (text, setSuggestions) => {
     const matches =
       text.length > 0 &&
@@ -49,25 +51,42 @@ const SearchBar = () => {
       alert("You can't choose the same city");
       return;
     }
-    const systemTickets = (a, b) =>
+
+    const systemTickets = (a, b, date) =>
       flightsSchedule.filter((flight) => {
         return (
           flight.origin.toLowerCase() === b.toLowerCase() &&
-          flight.destination.toLowerCase() === a.toLowerCase()
+          flight.destination.toLowerCase() === a.toLowerCase() &&
+          flight.date === date
         );
       });
+    setTimeout(() => {
+      const systemOneWayTickets = systemTickets(
+        searchInputs.origin,
+        searchInputs.destination,
+        searchInputs.departureDate
+      );
+      // systemOneWayTickets.filter((flight) => {
+      //   flight.date ;
+      // });
 
-    const systemOneWayTickets = systemTickets(
-      searchInputs.origin,
-      searchInputs.destination
-    );
-    const systemRoundTripTickets = systemTickets(
-      searchInputs.destination,
-      searchInputs.origin
-    );
-    setOneWayTickets(systemOneWayTickets);
-    setRoundTripTickets(systemRoundTripTickets);
+      const systemRoundTripTickets = systemTickets(
+        searchInputs.destination,
+        searchInputs.origin,
+        searchInputs.departureDate
+      );
+
+      setOneWayTickets(systemOneWayTickets);
+      setRoundTripTickets(systemRoundTripTickets);
+    }, 3000);
+    console.log(1);
+
+    // setSearchInputs({ departureDate: m });
+    console.log(2);
   };
+  const m = moment(searchInputs.departureDate, "YYYY-DD-MM").format("L");
+
+  console.log(searchInputs.departureDate);
 
   const isValid =
     searchInputs.origin !== "" &&
@@ -156,10 +175,10 @@ const SearchBar = () => {
               <DatePicker
                 placeholderText="Departure"
                 selected={searchInputs.departureDate}
-                onChange={(date) => setSearchInputs({ departureDate: date })}
-                dateFormat="dd/MM/yyyy"
+                onChange={handleChange}
+                // dateFormat="dd/MM/yyyy"
                 minDate={new Date()}
-                maxDate={searchInputs.returnDate}
+                // maxDate={searchInputs.returnDate}
               ></DatePicker>
             </div>
             {radio === "roundTrip" && (
@@ -168,7 +187,7 @@ const SearchBar = () => {
                   placeholderText="Return"
                   selected={searchInputs.returnDate}
                   onChange={(date) => setSearchInputs({ returnDate: date })}
-                  dateFormat="dd/MM/yyyy"
+                  // dateFormat="dd/MM/yyyy"
                   minDate={
                     searchInputs.departureDate !== ""
                       ? searchInputs.departureDate
