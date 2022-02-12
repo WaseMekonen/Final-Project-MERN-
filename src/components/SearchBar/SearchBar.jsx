@@ -7,8 +7,10 @@ import { getData } from "../../Utils/clientFunctions";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./SearchBar.module.css";
+import Context from '../context'
+import { searchSameDayFlights,searchRoundTripFlights } from "../../services/flightsSearch";
 
-const airportUrl = "/data/elalRouts.json";
+import elalRoutes from "../../../public/data/elalRouts.json";
 // const flightUrl = "/data/oneWay.json";
 const flightUrl = "/data/test.json";
 
@@ -22,30 +24,21 @@ const SearchBar = ({ mainClass }) => {
     setRoundTripTickets,
   } = useContext(AppContext);
 
-  const [airports, setAirports] = useState([]);
-  const [flightsSchedule, setFlightSchedule] = useState([]);
+  const {setFlightResults} = useContext(Context)
+
   const [suggestionsOrigin, setSuggestionsOrigin] = useState([]);
   const [suggestionsDestination, setSuggestionsDestination] = useState([]);
 
-  useEffect(() => {
-    getData(airportUrl, setAirports);
-  }, []);
-
-  useEffect(() => {
-    getData(flightUrl, setFlightSchedule);
-  }, []);
-
   const handleChange = (date) => {
-    // console.log(moment(date).format("YYYY-DD-MM"));
     setSearchInputs({ departureDate: date });
   };
 
   const setSuggestionsWrapper = (text, setSuggestions) => {
     const matches =
       text.length > 0 &&
-      airports.filter((airport) => {
+      elalRoutes.filter((route) => {
         const regex = new RegExp(`${text}`, "gi");
-        return airport.city.match(regex);
+        return route.city.match(regex);
       });
     setSuggestions(matches || []);
   };
@@ -55,65 +48,19 @@ const SearchBar = ({ mainClass }) => {
       alert("You can't choose the same city");
       return;
     }
+    const departureDay = moment(searchInputs.departureDate).format('DD/MM/YYYY')
+    const returnDay = moment(searchInputs.returnDate).format('DD/MM/YYYY')
 
-    // const systemOneWayTickets = flightsSchedule.filter((flight) => {
-    //   return (
-    //     flight.origin === origin &&
-    //     flight.destination === destination &&
-    //     flight.date === moment(departureDate).format("DD/MM/YYYY")
-    //   );
-    // });
-
-    const systemTickets = (a, b, date) =>
-      flightsSchedule.filter((flight) => {
-        return (
-          flight.origin.toLowerCase() === a.toLowerCase() &&
-          flight.destination.toLowerCase() === b.toLowerCase() &&
-          moment(date).format("DD/MM/YYYY") === flight.date
-        );
-      });
-
-    const systemTicketsRoundTrip = (a, b, userDepartureDate, userReturnDate) =>
-      flightsSchedule.filter((flight) => {
-        return (
-          // flight.origin.toLowerCase() === a.toLowerCase() &&
-          // flight.destination.toLowerCase() === b.toLowerCase() &&
-          moment(userDepartureDate).format("DD/MM/YYYY") ===
-            flight.userDepartureDate &&
-          moment(userReturnDate).format("DD/MM/YYYY") ===
-            flight.userReturnDate &&
-          flight.origin.toLowerCase() === b.toLowerCase()
-          // flight.destination.toLowerCase() === a.toLowerCase()
-        );
-      });
-
-    if (radio === "oneWay") {
-      const systemOneWayTickets = systemTicketsOneWay(
-        searchInputs.origin,
-        searchInputs.destination,
-        searchInputs.departureDate
-      );
-      setOneWayTickets(systemOneWayTickets);
-    } else {
-      const systemRoundTripTickets = systemTicketsRoundTrip(
-        searchInputs.origin,
-        searchInputs.destination,
-        searchInputs.departureDate,
-        searchInputs.returnDate
-      );
-      setRoundTripTickets(systemRoundTripTickets);
+    let flights = []
+    if(radio === "roundTrip"){
+      flights = searchRoundTripFlights(searchInputs.origin,searchInputs.destination,departureDay,returnDay)
+    }else{
+     flights = searchSameDayFlights(searchInputs.origin,searchInputs.destination,departureDay)
     }
-
-    // למצוא כרטיס שהיעד והמוצא שלו שווה ליעד של הלקוחוגם תאריך יציאה וחזרה
-
-    // const systemRoundTripTickets = systemTickets(
-    //   searchInputs.destination,
-    //   searchInputs.origin,
-    //   searchInputs.departureDate
-    // );
+    setFlightResults(flights)
   };
 
-  const isValid =
+const isValid =
     searchInputs.origin !== "" &&
     searchInputs.destination !== "" &&
     searchInputs.departureDate !== "" &&

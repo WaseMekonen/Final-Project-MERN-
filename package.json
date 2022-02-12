@@ -2,9 +2,11 @@
   "name": "final-project",
   "version": "0.0.0",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "setup": "node ./setup"
   },
   "dependencies": {
     "axios": "^0.25.0",
@@ -18,6 +20,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
+    "uuid": "^8.3.2",
     "vite": "^2.7.2"
   }
 }
